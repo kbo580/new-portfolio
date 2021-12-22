@@ -6,32 +6,38 @@
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/styles.scss">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet">
+
   <title></title>
 </head>
 
 <body>
-  <div class="pc-sidebar-wrapper">
-
+  <div class="pc-wrapper"><!--サイドバー用-->
     <header>
-      <h1><a href="#">Yuta Kobayashi's<br>Portfolio</a></h1>
-      
-      <nav class="header-nav">
-        <ul>
-          <li><a href="#works">Works</a></li>
-          <li><a href="#service">Service</a></li>
-          <li><a href="#profile">Profile</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="">Blog</a></li>
-        </ul>
-      </nav>
+      <div class="inner">
+        <h1><a href="#">Yuta Kobayashi's<br>Portfolio</a></h1>
+        
+        <nav class="header-nav">
+          <ul>
+            <li><a href="#works">Works</a></li>
+            <li><a href="#service">Service</a></li>
+            <li><a href="#profile">Profile</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="">Blog</a></li>
+          </ul>
+        </nav>
+        <!-- /header-nav -->
+      </div>
     </header>
 
     <div class="contents-wrapper">
 
       <main>
-        <!-- <div class="mv">
-    
-        </div> -->
+        <div class="mv">
+          <p class="mv-text">Welcome to<br>My Portfolio</p>
+        </div>
     
         <section class="works" id="works">
           <div class="section-heading-warpper">
@@ -46,7 +52,25 @@
                 <li class="item-card">
                   <a href="">
                     <div class="work-image">
+                      <img src="images/works-img.jpg" alt="">
+                    </div>
+                    <p class="work-title">ttl</p>
+                  </a>
+                </li>
+  
+                <li class="item-card">
+                  <a href="">
+                    <div class="work-image">
                       <img src="images/no-image.png" alt="">
+                    </div>
+                    <p class="work-title">ttl</p>
+                  </a>
+                </li>
+  
+                <li class="item-card">
+                  <a href="">
+                    <div class="work-image">
+                      <img src="images/works-img.jpg" alt="">
                     </div>
                     <p class="work-title">ttl</p>
                   </a>
@@ -73,25 +97,7 @@
                 <li class="item-card">
                   <a href="">
                     <div class="work-image">
-                      <img src="images/no-image.png" alt="">
-                    </div>
-                    <p class="work-title">ttl</p>
-                  </a>
-                </li>
-  
-                <li class="item-card">
-                  <a href="">
-                    <div class="work-image">
-                      <img src="images/no-image.png" alt="">
-                    </div>
-                    <p class="work-title">ttl</p>
-                  </a>
-                </li>
-  
-                <li class="item-card">
-                  <a href="">
-                    <div class="work-image">
-                      <img src="images/no-image.png" alt="">
+                      <img src="images/works-img.jpg" alt="">
                     </div>
                     <p class="work-title">ttl</p>
                   </a>
@@ -116,7 +122,7 @@
           <!-- service-wrapperここから -->
           <div class="service-wrapper odd">
             <figure class="service-image-wrapper fadeInLeftTrigger">
-              <img src="images/no-image.png" alt="">
+              <img src="images/mv-3.jpeg" alt="">
             </figure>
             
             <!-- service-text-wrapperここから -->
@@ -135,7 +141,7 @@
           <!-- service-wrapperここから -->
           <div class="service-wrapper even">
             <figure class="service-image-wrapper fadeInRightTrigger">
-              <img src="images/no-image.png" alt="">
+              <img src="images/works-img.jpg" alt="">
             </figure>
             
             <!-- service-text-wrapperここから -->
@@ -154,7 +160,7 @@
           <!-- service-wrapperここから -->
           <div class="service-wrapper odd">
             <figure class="service-image-wrapper fadeInLeftTrigger">
-              <img src="images/no-image.png" alt="">
+              <img src="images/mv-1.jpeg" alt="">
             </figure>
             
             <!-- service-text-wrapperここから -->
@@ -199,10 +205,13 @@
             <h2 class="section-heading">Contact</h2>
             <p class="ja-title">お問い合わせ</p>
           </div>
-          <div class="inner">
 
+          <div class="inner">
+            
+            
             <!-- form-wrapperここから -->
             <div class="form-wrapper">
+              <p>お仕事のご相談や採用のお話など、<br>何でもお気軽にお問い合わせください。</p>
 
               <div class="form-parts">
                 <div class="label-wrapper"><span class="label must">必須</span><label for="name">お名前</label></div>
@@ -223,14 +232,12 @@
                 <div class="label-wrapper"><span class="label must">任意</span><label for="textarea">お問い合わせ内容</div></label>
                 <textarea type="text" id="textarea" placeholder="ご自由にお書きください"></textarea>
               </div>
+              <div class="form-parts">
+                <input type="submit" value="送信" class="btn"></input>
+              </div>
               
-              <span><input type="submit" value="送信"></span>
             </div>
             <!-- form-wrapperここまで -->
-
-            <p>お仕事のご相談や採用のお話など、<br>
-            何でもお気軽にお問い合わせください。</p>
-            <div class="btn"><a href="#">お問い合わせ</a></div>
   
           </div>
         </section>
@@ -238,12 +245,18 @@
       </main>
   
       <footer>
-        <p class="copy">&copy; Yuta Kobayashi</p> 
+        <p class="copy">&copy; Yuta Kobayashi</p>
+        
+        <div class="to-top" id="toTop">
+          <img src="images/to-top.png" alt="topへ戻る">
+        </div>
       </footer>
+
     </div>
-    <!-- こんてんつ -->
+    <!-- /contents-wrapper -->
 
   </div>
+  <!-- /pc-wrapper -->
 
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

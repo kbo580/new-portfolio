@@ -44,6 +44,7 @@ img {
   text-align: center;
   line-height: 60px;
   margin: 0 auto;
+  display: block;
 }
 
 .btn a {
@@ -104,16 +105,16 @@ section:nth-child(odd) {
   section {
     padding: 40px 0 80px;
   }
-  .pc-sidebar-wrapper {
+  .pc-wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     position: relative;
   }
-  .pc-sidebar-wrapper header {
+  .pc-wrapper header {
     width: 300px;
   }
-  .pc-sidebar-wrapper .contents-wrapper {
+  .pc-wrapper .contents-wrapper {
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
@@ -136,6 +137,7 @@ section:nth-child(odd) {
 /* ------------------------------------ */
 header {
   background-color: #DBDBDB;
+  padding: 24px 0;
 }
 
 header h1 {
@@ -144,10 +146,10 @@ header h1 {
   margin-bottom: 24px;
   font-family: "Hiragino Kaku Gothic ProN";
   letter-spacing: normal;
+  color: #707070;
 }
 
 .header-nav {
-  padding-bottom: 24px;
   margin: 0 auto;
 }
 
@@ -168,7 +170,11 @@ header h1 {
   header {
     position: fixed;
     height: 100vh;
-    z-index: 1;
+    width: 300px;
+    z-index: 100;
+  }
+  header .inner {
+    padding: 0;
   }
   header h1 {
     font-size: 28px;
@@ -201,10 +207,21 @@ footer {
   text-align: center;
   line-height: 80px;
   border-top: 2px solid #fc2;
+  position: relative;
 }
 
 footer .copy {
   font-size: 12px;
+}
+
+.to-top {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  position: fixed;
+  bottom: 6%;
+  right: 2%;
+  z-index: 1;
 }
 
 @media (min-width: 900px) {
@@ -216,9 +233,32 @@ footer .copy {
 /* ------------------------------------ */
 /* メインビジュアル */
 /* ------------------------------------ */
+.mv {
+  background: url(../images/mv-6.jpeg) center/cover no-repeat;
+  width: 100%;
+  height: 500px;
+  position: relative;
+}
+
+.mv .mv-text {
+  color: #fff;
+  font-size: 70px;
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-family: 'Caveat', cursive;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
 @media (min-width: 900px) {
   .mv {
     height: 100vh;
+  }
+  .mv .mv-text {
+    font-size: 100px;
   }
 }
 
@@ -239,13 +279,15 @@ footer .copy {
 }
 
 .works-wrapper .items-wrapper .item-card {
-  border-radius: 4px;
   width: 100%;
-  -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
-          box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #fff;
+  overflow: hidden;
 }
 
 .works-wrapper .items-wrapper .item-card a {
+  border-radius: 4px;
   display: block;
   width: 100%;
 }
@@ -271,7 +313,6 @@ footer .copy {
 .works-wrapper .items-wrapper .item-card .work-title {
   text-align: center;
   padding: 1em 0;
-  background-color: #fff;
 }
 
 @media (min-width: 575px) {
@@ -302,6 +343,10 @@ footer .copy {
 /* ------------------------------------ */
 /* service */
 /* ------------------------------------ */
+.service {
+  width: 100%;
+}
+
 .service .service-wrapper {
   margin-bottom: 30px;
 }
@@ -345,14 +390,11 @@ footer .copy {
 }
 
 @media (min-width: 900px) {
-  .service {
-    padding: 0 4%;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
   .service .service-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1100px;
     height: 260px;
-    border: 1px solid #000;
     margin-bottom: 320px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -361,22 +403,25 @@ footer .copy {
         -ms-flex-pack: justify;
             justify-content: space-between;
     position: relative;
+    z-index: 1;
   }
   .service .service-wrapper:before {
-    content: " ";
+    content: "";
     position: absolute;
     background-color: #d0d0d0;
-    width: 100%;
+    width: 80%;
     height: 100%;
     z-index: -1;
-    right: 10%;
-    top: 20%;
+    left: 10%;
+    top: 50%;
   }
   /*画像*/
   .service-image-wrapper {
     margin-bottom: 0px;
-    width: 46%;
+    width: 48%;
     height: 100%;
+    -webkit-box-shadow: 0 0 20px #ccc;
+            box-shadow: 0 0 20px #ccc;
   }
   .service-image-wrapper img {
     height: 100%;
@@ -384,10 +429,25 @@ footer .copy {
     -o-object-fit: cover;
        object-fit: cover;
   }
+  .service-wrapper.odd .service-image-wrapper {
+    margin-right: 80px;
+  }
+  .service-wrapper.odd .service-text-wrapper {
+    top: 100%;
+    position: relative;
+  }
+  .service-wrapper.even .service-image-wrapper {
+    margin-left: 80px;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    top: 100%;
+    position: relative;
+  }
   /* テキスト */
   .service-text-wrapper {
     padding: 32px 24px;
-    width: 46%;
+    width: 50%;
   }
   .service-text-wrapper .service-title {
     margin-bottom: 24px;
@@ -395,20 +455,6 @@ footer .copy {
   }
   .service-text-wrapper .service-title span {
     font-size: 40px;
-  }
-  .service-wrapper.odd .service-text-wrapper {
-    top: 100%;
-    position: relative;
-  }
-  .service-wrapper.even {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: row-reverse;
-            flex-direction: row-reverse;
-  }
-  .service-wrapper.even figure {
-    top: 100%;
-    position: relative;
   }
 }
 
@@ -504,25 +550,71 @@ footer .copy {
 /* -------------------------------------------- */
 /* コンタクトページ */
 /* -------------------------------------------- */
+.contact {
+  width: 100%;
+}
+
 .contact .form-wrapper {
   width: 100%;
   margin: 0 auto;
-  /* 送信ボタン */
+}
+
+.contact .form-wrapper p {
+  margin-bottom: 24px;
+}
+
+/* ラベル */
+.form-wrapper .form-parts .label-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 8px;
+  /* マーク */
+  /* 必須マーク */
+  /* 任意マーク */
+}
+
+.form-wrapper .form-parts .label-wrapper .label {
+  color: #fff;
+  margin-right: 10px;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.form-wrapper .form-parts .label-wrapper .must {
+  background: #f58694;
+}
+
+.form-wrapper .form-parts .label-wrapper .free {
+  background: #7fbfff;
+}
+
+.form-wrapper .form-parts .label-wrapper label {
+  font-weight: bold;
+}
+
+/* フォーム部品 */
+.form-wrapper .form-parts {
   /* エラーメッセージ */
   /* エラーメッセージ */
 }
 
-.contact .form-wrapper input[type="text"],
-.contact .form-wrapper input[type="email"],
-.contact .form-wrapper textarea {
+.form-wrapper .form-parts input[type="text"],
+.form-wrapper .form-parts input[type="email"],
+.form-wrapper .form-parts textarea {
   width: 100%;
-  padding: 8px 16px;
-  margin-bottom: 24px;
+  padding: 0.5em 1em;
+  margin-bottom: 1.5em;
   border: 1px solid #d0d5d8;
   border-radius: 3px;
+  font-size: 14px;
 }
 
-.contact .form-wrapper textarea {
+.form-wrapper .form-parts textarea {
   height: 200px;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -530,109 +622,66 @@ footer .copy {
           user-select: none;
 }
 
-.contact .form-wrapper input[type="submit"] {
-  display: block;
-  width: 100%;
-  height: 60px;
-  border-color: #000;
-  background: #fff;
-  color: #000;
-  font-size: 1.25rem;
-  font-weight: 600;
-  border-radius: 6px;
-  margin: 32px auto 16px;
+.form-wrapper .form-parts input[type="submit"] {
+  -webkit-transition: all .4s;
+  transition: all .4s;
+  font-size: 14px;
 }
 
-.contact .form-wrapper input[type="submit"]:hover {
-  opacity: .6;
+.form-wrapper .form-parts input[type="submit"]:hover {
+  cursor: pointer;
+  background-color: #333;
+  color: #fff;
 }
 
-.contact .form-wrapper .wpcf7 form .wpcf7-response-output {
+.form-wrapper .form-parts .wpcf7 form .wpcf7-response-output {
   margin: 0;
   padding: 8px;
 }
 
-.contact .form-wrapper .wpcf7-list-item {
+.form-wrapper .form-parts .wpcf7-list-item {
   margin: 0 auto;
   text-align: left;
 }
 
-.contact .form-wrapper p {
+.form-wrapper .form-parts p {
   text-align: center;
-}
-
-.form-wrapper {
-  width: 100%;
-  margin: 0 auto;
-}
-
-.form-wrapper .label-wrapper {
-  margin-bottom: 8px;
-  /* マーク */
-  /* 必須マーク */
-  /* 任意マーク */
-}
-
-.form-wrapper .label-wrapper .label {
-  color: #fff;
-  margin-right: 10px;
-  padding: 6px 10px;
-  border-radius: 5px;
-}
-
-.form-wrapper .label-wrapper .must {
-  background: #f58694;
-}
-
-.form-wrapper .label-wrapper .free {
-  background: #7fbfff;
-}
-
-.form-wrapper .label-wrapper label {
-  font-weight: bold;
-}
-
-@media (min-width: 575px) {
-  .contact {
-    /* エラーメッセージ */
-  }
-  .contact .form-wrapper {
-    width: 100%;
-    /* 送信ボタン */
-  }
-  .contact .form-wrapper input[type="submit"] {
-    width: 250px;
-    font-size: 1.25rem;
-    margin: 48px auto 16px;
-  }
-  .contact .wpcf7-list-item {
-    width: 100%;
-  }
 }
 
 @media (min-width: 1025px) {
   .contact .form-wrapper {
-    width: 800px;
+    max-width: 800px;
     margin: 0 auto;
   }
-  .contact .form-wrapper input[type="text"],
-  .contact .form-wrapper input[type="email"],
-  .contact .form-wrapper textarea {
-    margin: 0 auto 40px;
+  .contact .form-wrapper p {
+    margin-bottom: 40px;
   }
-  .contact .form-wrapper textarea {
+  /* ラベル */
+  .form-wrapper .form-parts .label-wrapper {
+    /* マーク */
+  }
+  .form-wrapper .form-parts .label-wrapper .label {
+    font-size: 14px;
+  }
+  /* フォーム部品 */
+  .form-wrapper .form-parts input[type="text"],
+  .form-wrapper .form-parts input[type="email"],
+  .form-wrapper .form-parts textarea {
+    font-size: 16px;
+  }
+  .form-wrapper .form-parts textarea {
     margin-bottom: 16px;
   }
-  .contact .form-wrapper input[type="submit"] {
-    margin: 80px auto 16px;
+  .form-wrapper .form-parts input[type="submit"] {
+    font-size: 16px;
   }
-  .contact .wpcf7-list-item {
+  .form-wrapper .wpcf7-list-item {
     font-size: 1rem;
   }
-  .contact p {
+  .form-wrapper p {
     font-size: 1.25rem;
   }
-  .contact p br {
+  .form-wrapper p br {
     display: none;
   }
 }
