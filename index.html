@@ -17,10 +17,10 @@
       
       <nav class="header-nav">
         <ul>
-          <li><a href="">Works</a></li>
-          <li><a href="">Service</a></li>
-          <li><a href="">Profile</a></li>
-          <li><a href="">Contact</a></li>
+          <li><a href="#works">Works</a></li>
+          <li><a href="#service">Service</a></li>
+          <li><a href="#profile">Profile</a></li>
+          <li><a href="#contact">Contact</a></li>
           <li><a href="">Blog</a></li>
         </ul>
       </nav>
@@ -200,6 +200,36 @@
             <p class="ja-title">お問い合わせ</p>
           </div>
           <div class="inner">
+
+            <!-- form-wrapperここから -->
+            <div class="form-wrapper">
+
+              <div class="form-parts">
+                <div class="label-wrapper"><span class="label must">必須</span><label for="name">お名前</label></div>
+                <input type="text" id="name" placeholder="山田 太郎">
+              </div>
+            
+              <div class="form-parts">
+                <div class="label-wrapper"><span class="label free">任意</span><label for="mail">メールアドレス</label></div>
+                <input type="email" id="mail" placeholder="abc@example.com">
+              </div>
+            
+              <div class="form-parts">
+                <div class="label-wrapper"><span class="label free">任意</span><label for="title">タイトル</label></div>
+                <input type="text" id="title" placeholder="">
+              </div>
+            
+              <div class="form-parts">
+                <div class="label-wrapper"><span class="label must">任意</span><label for="textarea">お問い合わせ内容</div></label>
+                <textarea type="text" id="textarea" placeholder="ご自由にお書きください"></textarea>
+              </div>
+              
+              <span><input type="submit" value="送信"></span>
+            </div>
+            <!-- form-wrapperここまで -->
+
+            <p>お仕事のご相談や採用のお話など、<br>
+            何でもお気軽にお問い合わせください。</p>
             <div class="btn"><a href="#">お問い合わせ</a></div>
   
           </div>

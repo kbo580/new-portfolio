@@ -31,7 +31,7 @@ img {
 
 .inner {
   margin: 0 auto;
-  max-width: 900px;
+  max-width: 1100px;
   width: 100%;
   padding: 0 15px;
 }
@@ -56,10 +56,6 @@ img {
 .btn a:hover {
   background-color: #333333;
   color: #ffffff;
-}
-
-header {
-  background-color: tomato;
 }
 
 /* ------------------------------------ */
@@ -121,6 +117,7 @@ section:nth-child(odd) {
     -webkit-box-flex: 1;
         -ms-flex: 1;
             flex: 1;
+    margin-left: 300px;
   }
   /* セクションの見出し */
   .section-heading-warpper {
@@ -137,6 +134,10 @@ section:nth-child(odd) {
 /* ------------------------------------ */
 /* header */
 /* ------------------------------------ */
+header {
+  background-color: #DBDBDB;
+}
+
 header h1 {
   font-size: 24px;
   font-weight: 300;
@@ -147,7 +148,6 @@ header h1 {
 
 .header-nav {
   padding-bottom: 24px;
-  width: 70px;
   margin: 0 auto;
 }
 
@@ -168,10 +168,14 @@ header h1 {
   header {
     position: fixed;
     height: 100vh;
+    z-index: 1;
   }
   header h1 {
     font-size: 28px;
     padding: 2em 1em;
+  }
+  .header-nav {
+    width: 70px;
   }
   .header-nav ul {
     display: block;
@@ -180,7 +184,6 @@ header h1 {
     margin-bottom: 32px;
   }
   .header-nav ul li a {
-    font-weight: bold;
     -webkit-transition: all .4s;
     transition: all .4s;
   }
@@ -496,6 +499,150 @@ footer .copy {
     -o-object-fit: cover;
        object-fit: cover;
   }
+}
+
+/* -------------------------------------------- */
+/* コンタクトページ */
+/* -------------------------------------------- */
+.contact .form-wrapper {
+  width: 100%;
+  margin: 0 auto;
+  /* 送信ボタン */
+  /* エラーメッセージ */
+  /* エラーメッセージ */
+}
+
+.contact .form-wrapper input[type="text"],
+.contact .form-wrapper input[type="email"],
+.contact .form-wrapper textarea {
+  width: 100%;
+  padding: 8px 16px;
+  margin-bottom: 24px;
+  border: 1px solid #d0d5d8;
+  border-radius: 3px;
+}
+
+.contact .form-wrapper textarea {
+  height: 200px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.contact .form-wrapper input[type="submit"] {
+  display: block;
+  width: 100%;
+  height: 60px;
+  border-color: #000;
+  background: #fff;
+  color: #000;
+  font-size: 1.25rem;
+  font-weight: 600;
+  border-radius: 6px;
+  margin: 32px auto 16px;
+}
+
+.contact .form-wrapper input[type="submit"]:hover {
+  opacity: .6;
+}
+
+.contact .form-wrapper .wpcf7 form .wpcf7-response-output {
+  margin: 0;
+  padding: 8px;
+}
+
+.contact .form-wrapper .wpcf7-list-item {
+  margin: 0 auto;
+  text-align: left;
+}
+
+.contact .form-wrapper p {
+  text-align: center;
+}
+
+.form-wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.form-wrapper .label-wrapper {
+  margin-bottom: 8px;
+  /* マーク */
+  /* 必須マーク */
+  /* 任意マーク */
+}
+
+.form-wrapper .label-wrapper .label {
+  color: #fff;
+  margin-right: 10px;
+  padding: 6px 10px;
+  border-radius: 5px;
+}
+
+.form-wrapper .label-wrapper .must {
+  background: #f58694;
+}
+
+.form-wrapper .label-wrapper .free {
+  background: #7fbfff;
+}
+
+.form-wrapper .label-wrapper label {
+  font-weight: bold;
+}
+
+@media (min-width: 575px) {
+  .contact {
+    /* エラーメッセージ */
+  }
+  .contact .form-wrapper {
+    width: 100%;
+    /* 送信ボタン */
+  }
+  .contact .form-wrapper input[type="submit"] {
+    width: 250px;
+    font-size: 1.25rem;
+    margin: 48px auto 16px;
+  }
+  .contact .wpcf7-list-item {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .contact .form-wrapper {
+    width: 800px;
+    margin: 0 auto;
+  }
+  .contact .form-wrapper input[type="text"],
+  .contact .form-wrapper input[type="email"],
+  .contact .form-wrapper textarea {
+    margin: 0 auto 40px;
+  }
+  .contact .form-wrapper textarea {
+    margin-bottom: 16px;
+  }
+  .contact .form-wrapper input[type="submit"] {
+    margin: 80px auto 16px;
+  }
+  .contact .wpcf7-list-item {
+    font-size: 1rem;
+  }
+  .contact p {
+    font-size: 1.25rem;
+  }
+  .contact p br {
+    display: none;
+  }
+}
+
+/* エラーメッセージを見やすくする */
+span.wpcf7-not-valid-tip,
+.wpcf7-response-output.wpcf7-validation-errors {
+  color: red;
+  font-weight: 600;
+  margin-bottom: 10px;
 }
 
 /* ------------------------------------ */
