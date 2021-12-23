@@ -92,8 +92,6 @@ body {
   }
 }
 
-
-
 /* ------------------------------------ */
 /* 共通部分 */
 /* ------------------------------------ */
@@ -860,6 +858,61 @@ margin-bottom: 10px;
 }
 
 /* -------------------------------------------- */
+/* 製作物の一覧ページ(works) */
+/* -------------------------------------------- */
+.works{
+  .works-add{
+    margin-bottom: 20px;
+  }
+}
+
+.navigation{
+  width: 100%;
+  /* リンクの枠 */
+  .nav-links{
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  /* 数字のリンク */
+  .page-numbers{
+    color: $textColorA;
+    border: 2px solid $textColorA;
+    display: inline-block;
+    border-radius: 4px;
+    padding: 0.5em 0.8em;
+    transition: .3s;
+    font-weight: bold;
+
+    /* 現在のページ */
+    &.current{
+      background-color:  #333;
+      color: #fff;
+    }
+  }
+
+  /* 現在のページとドット以外にホバーした時 */
+  .page-numbers:not(.current, .dots):hover{
+    background: $textColorA;
+    color: #fff;
+    opacity: 1;
+  }
+}
+
+@media (min-width: 575px){
+  .works{
+    .works-add{
+      text-align: center;
+      margin-bottom: 40px;
+    }
+  }
+}
+
+
+
+
+/* -------------------------------------------- */
 /* プロフィールページ */
 /* -------------------------------------------- */
 .about{
@@ -948,7 +1001,7 @@ margin-bottom: 10px;
   }
 }
 
-/* スキルについて */
+/* スキル */
 .skills{
   .skills-container{
     /* 個々のスキルの説明ブロック */
@@ -1011,7 +1064,7 @@ margin-bottom: 10px;
     }
   }
 
-  /* スキルについて */
+  /* スキル */
   .skills{
     .skills-container{
       display: flex;
@@ -1056,9 +1109,47 @@ margin-bottom: 10px;
   }
 }
 
+/* -------------------------------------------- */
+/* 404ページ */
+/* -------------------------------------------- */
+.not-found-page{
+  h2{
+    font-size: calc(1.375rem + ((1vw - 3.75px) * 2.5366));
+    margin-bottom: 32px;
+  }
+
+  p{
+    a{
+      color: #1B0DAB;;
+      transition: all .4s;
+      text-decoration: underline;
+      &:hover{
+        opacity: .7;
+      }
+    }
+  }
+}
+
+@media (min-width: 575px) {
+  .not-found-page{
+    h2{
+      margin-bottom: 80px;
+    }
+  }
+}
+
+@media (min-width: 1025px) {
+  .not-found-page{
+    h2{
+      font-size: rem(48);
+    }
+  }
+}
+
 /* ------------------------------------ */
-/* 下層ページ */
+/* 下層ページ共通部品 */
 /* ------------------------------------ */
+/* ページタイトル */
 .page-heading{
   background-color: $textColorA;
   font-size: calc(2rem + ((1vw - 3.75px) * 2.2069));
@@ -1070,16 +1161,59 @@ margin-bottom: 10px;
   }
 }
 
-@media (min-width: 575px) {
+/* パンクズリスト */
+.breadcrumbs{
+  // border: 1px solid #000;
+}
 
-  
+.breadcrumbs .breadcrumb_inner {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 4px;
+
+  span {
+    display: flex;
+    align-items: center;
+  }
+
+  a {
+    color: #555555;
+  }
+}
+
+.breadcrumbs .breadcrumb_inner span span::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+}
+
+.breadcrumbs .breadcrumb_inner span .home::before {
+  background: url(../images/svg/home.svg) no-repeat;
+  background-size: contain;
+}
+
+.breadcrumbs .breadcrumb_inner span .category::before {
+  background: url(../images/svg/folder.svg) no-repeat;
+  background-size: contain;
+}
+
+.breadcrumbs .breadcrumb_inner span .post_tag::before {
+  background: url(../images/svg/tag.svg) no-repeat;
+  background-size: contain;
+  align-items: center;
+}
+
+.breadcrumbs .breadcrumb_inner span .post::before {
+  background: url(../images/svg/file.svg) no-repeat;
+  background-size: contain;
 }
 
 @media (min-width: 1025px) {
   .page-heading{
     font-size: rem(48);
   }
-  
 }
 /* ------------------------------------ */
 /* 下層ページ */
