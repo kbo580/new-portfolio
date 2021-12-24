@@ -1,30 +1,7 @@
 jQuery(function(){
 
-  $('.item-card').hover(function(){
-    $(this).find('img').css('transform','scale(1.1, 1.1)');
-  },function(){
-    $(this).find('img').css('transform','scale(1, 1)');
-  });
-
+  //メインビジュアルの高さを取得して変数にする
   var mvHight = $('.mv').outerHeight(true);
-
-  // $(window).on('scroll', function(){
-  //   if($(this).scrollTop()>= headerHight){
-  //     $('header').addClass('fixed');
-  //   }
-  //   else{
-  //     $('header').removeClass('fixed');
-  //   }
-  // });
-
-  $('.header-nav ul li a').on('click', function(){
-    var id =$(this).attr('href');
-    var pos = $(id).offset().top;
-    $('html, body').animate({'scrollTop': pos}, 300);
-  });
-
-  // ボタンを隠す
-  $('#toTop').hide();
 
   //画面をスクロールしたらフェードイン
   $(window).scroll(function(){
@@ -36,7 +13,51 @@ jQuery(function(){
     }
   });
 
-  //「topへ戻る」ボタンを押すとtopから0の地点へスクロールする
+  //バーガーメニュー
+  $('#show').on('click', function(){
+    $(this).toggleClass('active');
+    $('body').toggleClass('active');
+    $('#screen').toggleClass('active');
+    $('#sp-nav').toggleClass('slidein');
+  });
+  
+  $('.nav-menu li a').on('click', function () {
+      $('#show').removeClass('active');
+      $('body').removeClass('active');
+      $('#screen').removeClass('active');
+      $('#sp-nav').removeClass('slidein');
+  });
+
+  $('#screen').on('click', function () {
+    $('.nav-menu li a').click();
+  });
+
+    // サイズを変えた時にハンバーガーメニューの処理を消す
+    $(window).on('load resize', function(){
+      var w = $(window).width();
+      var x = 1025;
+
+    if (w <= x) {
+      $('.nav-menu li a').click();
+    }
+  });
+
+  // worksのカードにカーソルが乗った時の動き
+  $('.item-card').hover(function(){
+    $(this).find('img').css('transform','scale(1.1, 1.1)');
+  },function(){
+    $(this).find('img').css('transform','scale(1, 1)');
+  });
+  
+  // メニューをクリックで任意の場所へ
+  $('.header-nav ul li a').on('click', function(){
+    var id =$(this).attr('href');
+    var pos = $(id).offset().top;
+    $('html, body').animate({'scrollTop': pos}, 300);
+  });
+
+  //「topへ戻る」関連
+  $('#toTop').hide(); //topへ戻るボタン
   $('#toTop').click(function(){ 
     $('html,body').animate({'scrollTop':0},500);
 
@@ -47,39 +68,17 @@ jQuery(function(){
   });
 
 
-  function slideAnime(){
-    //====左に動くアニメーションここから===
-      $('.leftAnime').each(function(){ 
-        var elemPos = $(this).offset().top-50;
-        var scroll = $(window).scrollTop();
-        var windowHeight = $(window).height();
-        if (scroll >= elemPos - windowHeight){
-          //左から右へ表示するクラスを付与
-          //テキスト要素を挟む親要素（左側）とテキスト要素を元位置でアニメーションをおこなう
-          $(this).addClass("slideAnimeLeftRight"); //要素を左枠外にへ移動しCSSアニメーションで左から元の位置に移動
-          $(this).children(".leftAnimeInner").addClass("slideAnimeRightLeft");  //子要素は親要素のアニメーションに影響されないように逆の指定をし元の位置をキープするアニメーションをおこなう
-        }else{
-          //左から右へ表示するクラスを取り除く
-          $(this).removeClass("slideAnimeLeftRight");
-          $(this).children(".leftAnimeInner").removeClass("slideAnimeRightLeft");
-          
-        }
-      });
-      
-    }
-    
-    // 画面をスクロールをしたら動かしたい場合の記述
-    $(window).scroll(function (){
-      slideAnime();/* アニメーション用の関数を呼ぶ*/
-    });// ここまで画面をスクロールをしたら動かしたい場合の記述
-  
-    // 画面が読み込まれたらすぐに動かしたい場合の記述
-    $(window).on('load', function(){
-      slideAnime();/* アニメーション用の関数を呼ぶ*/
-    });// ここまで画面が読み込まれたらすぐに動かしたい場合の記述
+  // 記事ページのデモ
+  $('.pc-image, .sp-image').hide();
+  $('#pcToggle').click(function(){ 
+    $('.pc-image').slideToggle(400);
+    return false;
+  });
 
-
-
+  $('#spToggle').click(function(){ 
+    $('.sp-image').slideToggle(400);
+    return false;
+  });
 
 
 

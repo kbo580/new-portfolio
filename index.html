@@ -18,6 +18,7 @@
     <header>
       <div class="inner">
         <h1><a href="#">Yuta Kobayashi's<br>Portfolio</a></h1>
+
         
         <nav class="header-nav">
           <ul>
@@ -25,15 +26,39 @@
             <li><a href="#service">Service</a></li>
             <li><a href="#profile">Profile</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li><a href="">Blog</a></li>
+            <li><a href="404.html">Blog</a></li>
           </ul>
         </nav>
         <!-- /header-nav -->
+
+        <div class="burger" id="show">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <!-- /burger-->
+
+        <div class="screen" id="screen"></div><!-- スクリーン -->
+    
+        <nav id="sp-nav" class="sp-nav">
+          <ul class="nav-menu">
+            <li class="nav-title">Menu</li>
+            <li><a href="index.html">Top</a></li>
+            <li><a href="#works">Works</a></li>
+            <li><a href="#service">Service</a></li>
+            <li><a href="#profile">Profile</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="">Blog</a></li>
+          </ul>  
+        </nav>
+        <!-- /nav -->
+        
       </div>
+      <!-- /inner -->
     </header>
-
+    
     <div class="contents-wrapper">
-
+      
       <main>
         <div class="mv">
           <!-- <p class="mv-text">Welcome to<br>My Portfolio</p> -->
@@ -55,11 +80,11 @@
               <p class="ja-title">製作物</p>
             </div>
 
-            <div class="works-wrapper">
+            <!-- <div class="works-wrapper">
               <ul class="items-wrapper">
   
                 <li class="item-card">
-                  <a href="">
+                  <a href="single.html">
                     <div class="work-image">
                       <img src="images/works-img.jpg" alt="">
                     </div>
@@ -113,7 +138,7 @@
                 </li>
   
               </ul>
-            </div>
+            </div> -->
             <!-- /works-wrapper -->
   
             <div class="btn"><a href="works.html">Read More</a></div>
@@ -129,64 +154,63 @@
               <p class="ja-title">できること</p>
             </div>
 
-            <div class="service-wrapper odd">
-  
-              <figure class="service-image-wrapper fadeInLeftTrigger">
-                <img src="images/mv-3.jpeg" alt="">
-              </figure>
-              
-              <div class="service-text-wrapper fadeInRightTrigger">
+            <div class="service-container">
+              <div class="service-wrapper odd">
     
-                <div class="service-text-content">
-                  <h3 class="h3-title"><span>01</span>.Webデザイン</h3>
-                  <p class="service-text">サイトの設計、デザインを作成し、それをもとにWebサイトの製作ができます。またタブレットやスマートフォンに対応させたレスポンシブデザインもできます。</p>
+                <figure class="service-image-wrapper fadeInLeftTrigger">
+                  <img src="images/mv-3.jpeg" alt="">
+                </figure>
+                
+                <div class="service-text-wrapper fadeInRightTrigger">
+      
+                  <div class="service-text-content">
+                    <h3 class="h3-title"><span>01</span>.Webデザイン</h3>
+                    <p class="service-text">サイトの設計、デザインを作成し、それをもとにWebサイトの製作ができます。またタブレットやスマートフォンに対応させたレスポンシブデザインもできます。</p>
+                  </div>
+                  <!-- service-text-contentここまで -->
+    
                 </div>
-                <!-- service-text-contentここまで -->
-  
+                <!-- service-text-wrapperここまで -->
+    
               </div>
-              <!-- service-text-wrapperここまで -->
-  
-            </div>
-            <!-- service-wrapperここまで -->
+              <!-- service-wrapperここまで -->
 
-            <!-- service-wrapperここから -->
-            <div class="service-wrapper even">
-              <figure class="service-image-wrapper fadeInRightTrigger">
-                <img src="images/works-img.jpg" alt="">
-              </figure>
-              
-              <!-- service-text-wrapperここから -->
-              <div class="service-text-wrapper fadeInLeftTrigger">
-                <!-- service-text-contentここから -->
-                <div class="service-text-content ">
-                  <h3 class="h3-title"><span>02</span>.コーディング</h3>
-                  <p class="service-text">ワイヤーフレームをもとに忠実に再現をし、様々な動きやエフェクトをつけることができます。またメンテナンスがしやすく見やすいコードを書くように努めています。</p>
+              <div class="service-wrapper even">
+                <figure class="service-image-wrapper fadeInRightTrigger">
+                  <img src="images/works-img.jpg" alt="">
+                </figure>
+                
+                <div class="service-text-wrapper fadeInLeftTrigger">
+                
+                  <div class="service-text-content ">
+                    <h3 class="h3-title"><span>02</span>.コーディング</h3>
+                    <p class="service-text">ワイヤーフレームをもとに忠実に再現をし、様々な動きやエフェクトをつけることができます。またメンテナンスがしやすく見やすいコードを書くように努めています。</p>
+                  </div>
+                  <!-- service-text-contentここまで -->
                 </div>
-                <!-- service-text-contentここまで -->
+                <!-- service-text-wrapperここまで -->
               </div>
-              <!-- service-text-wrapperここまで -->
-            </div>
-            <!-- service-wrapperここまで -->
+              <!-- service-wrapperここまで -->
 
-            <!-- service-wrapperここから -->
-            <div class="service-wrapper odd">
-              <figure class="service-image-wrapper fadeInLeftTrigger">
-                <img src="images/mv-1.jpeg" alt="">
-              </figure>
-              
-              <!-- service-text-wrapperここから -->
-              <div class="service-text-wrapper fadeInRightTrigger">
-                <!-- service-text-contentここから -->
-                <div class="service-text-content">
-                  <h3 class="h3-title"><span>03</span>.WordPress化</h3>
-                  <p class="service-text">HTMLとCSSで作成したサイトをWordPress化することによって、自身で容易に管理、更新ができるようにできます。</p>
+              <div class="service-wrapper odd">
+                <figure class="service-image-wrapper fadeInLeftTrigger">
+                  <img src="images/mv-1.jpeg" alt="">
+                </figure>
+                
+                <div class="service-text-wrapper fadeInRightTrigger">
+                
+                  <div class="service-text-content">
+                    <h3 class="h3-title"><span>03</span>.WordPress化</h3>
+                    <p class="service-text">HTMLとCSSで作成したサイトをWordPress化することによって、自身で容易に管理、更新ができるようにできます。</p>
+                  </div>
+                  <!-- service-text-contentここまで -->
                 </div>
-                <!-- service-text-contentここまで -->
+                <!-- service-text-wrapperここまで -->
               </div>
-              <!-- service-text-wrapperここまで -->
+              <!-- service-wrapperここまで -->
             </div>
-            <!-- service-wrapperここまで -->
-
+            <!-- /service-container -->
+            
           </div>
           <!-- /inner -->
         </section>

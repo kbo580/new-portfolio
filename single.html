@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.scss">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet">
+
+  <title></title>
+</head>
+
+<body>
+  <div class="pc-wrapper"><!--サイドバー用-->
+    <header>
+      <div class="inner">
+        <h1><a href="index.html">Yuta Kobayashi's<br>Portfolio</a></h1>
+
+        <nav class="header-nav">
+          <ul>
+            <li><a href="#works">Works</a></li>
+            <li><a href="#service">Service</a></li>
+            <li><a href="#profile">Profile</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="404.html">Blog</a></li>
+          </ul>
+        </nav>
+        <!-- /header-nav -->
+      </div>
+
+
+    </header>
+
+    <div class="contents-wrapper">
+
+      <main>
+        <div class="page-mv single">
+          <h2 class="page-heading">ページタイトルページタイトル</h2>  
+        </div>
+        <!-- /page-mv -->
+
+        <div class="breadcrumbs">
+          <div class="breadcrumb_inner">
+            <span><a href="/">HOME</a></span> >
+            <span><a href="/">ページ名</a></span> >
+            <span>ページタイトルページタイトル</span> 
+          </div>
+        </div>
+        <!-- /breadcrumbs -->
+        
+        <section class="single">
+          <div class="inner">
+          
+            <div class="image-wrapper">
+              <!-- <img src="<?php echo CFS()->get('screen');?>" class="single-image"> -->
+              <img src="images/k-create-pc-image.png" alt="" class="single-image">
+            </div>
+    
+            <ul>
+              <li class="single-title">サイト名</li>
+              <!-- <li class="single-content"><a href="#"><?php echo CFS()->get('url');?></a><i class="fas fa-external-link-alt"></i></li> -->
+              <li class="list-content"><a href="#">サイトタイトル</a></li>
+            </ul>
+  
+            <ul>
+              <li class="single-title">サイト構成</li>
+              <!-- <li class="single-content"><?php echo CFS()->get('structure');?></li> -->
+              <li class="single-content">ページ構成</li>
+            </ul>
+    
+            <ul>
+              <li class="single-title">作成ツールなど</li>
+              <!-- <li class="single-content"><?php echo CFS()->get('tools');?></li> -->
+              <li class="list-content">html/ css/ jQuery</li>
+            </ul>
+  
+            <ul>
+              <li class="single-title">制作期間</li>
+              <!-- <li class="single-content"><?php echo CFS()->get('period');?></li> -->
+              <li class="single-content">日数</li>
+            </ul>
+  
+            <ul>
+              <li class="single-title">サイト製作の概要</li>
+              <!-- <li class="single-content"><?php echo CFS()->get('about-works');?></li> -->
+              <li class="single-content">テキストが入ります。テキストが入ります。。</li>
+            </ul>
+  
+            <ul>
+              <li class="single-title">ゴール</li>
+              <!-- <li class="single-content"><?php echo CFS()->get('goal');?></li> -->
+              <li class="single-content">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</li>
+            </ul>
+  
+            <ul class="point-wrapper">
+              <li class="single-title">サイト製作のポイントなど</li>
+                <!-- <?php
+                  $fields = $cfs->get('point-list'); 
+                  foreach ((array)$fields as $field) :
+                  ?> -->
+                  <!-- <li class="single-content"> -->
+                    <!-- <?php echo $field['point']; ?> -->
+                <!-- </li> -->
+                  <!-- <?php endforeach; ?> -->
+                <li class="single-content">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</li>
+            </ul>
+          
+            <ul class="works-comments">
+              <li class="single-title">注釈、一言</li>
+              <li class="single-content">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</li>
+              <!-- <li class="single-content"><?php echo CFS()->get('word');?></li> -->
+            </ul>
+  
+            <div class="site-image-wrapper">
+    
+              <!-- パソコン用イメージここから -->
+              <div class="pc-image-wrapper">
+                <div class="toggle-btn" id="pcToggle"><i class="fas fa-desktop"></i>パソコンでのイメージ</div>
+                <p class="click-open">※クリックで開閉できます</p>
+                <div class="pc-image">
+                  <!-- <img src="<?php echo CFS()->get('pc-image');?>" alt="<?php the_title(); ?>のpcイメージ画像" loading="lazy"> -->
+                  <img src="images/k-create-screen .png" alt="">
+                </div>
+              </div>
+              <!-- パソコン用イメージここまで -->
+    
+              <!-- スマホ用イメージここから -->
+              <div class="sp-image-wrapper">
+                <div class="toggle-btn" id="spToggle"><i class="fas fa-mobile-alt"></i>スマホでのイメージ</div>
+                <p class="click-open">※クリックで開閉できます</p>
+                <div class="sp-image">
+                  <!-- <img src="<?php echo CFS()->get('sp-image');?>" alt="<?php the_title(); ?>のスマホイメージ画像" loading="lazy"> -->
+                  <img src="images/k-create_sp-screen .png" alt="">
+                </div>
+              </div>
+              <!-- スマホ用イメージここまで -->
+  
+            </div>
+            <!-- /site-image-wrapper -->
+
+            
+            <ul class="pagination">
+              <!-- <li class="prev"><?php previous_post_link('%link', '<i class="fas fa-angle-left"></i>PREV'); ?></li> -->
+              <li class="prev"><a href="">prev</a></li>
+              <li class="return-works"><a href="<?php echo home_url(); ?>/works">Works一覧へ</a></li>
+              
+              <!-- <li class="next"><?php next_post_link('%link','NEXT<i class="fas fa-angle-right"></i>'); ?></li> -->
+              <li class="next"><a href="">next</a></li>
+
+            </ul>
+
+          </div>
+          <!-- /inner -->
+    
+        </section>
+        <!-- singleここまで -->
+
+      </main>
+  
+      <footer>
+        <p class="copy">&copy; Yuta Kobayashi</p>
+        
+        <div class="to-top" id="toTop">
+          <img src="images/to-top.png" alt="topへ戻る">
+        </div>
+      </footer>
+
+    </div>
+    <!-- /contents-wrapper -->
+
+  </div>
+  <!-- /pc-wrapper -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
