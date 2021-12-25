@@ -562,6 +562,7 @@ footer .copy {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  border: 1px solid #ddd;
 }
 
 /* サービスの画像 */
@@ -570,6 +571,7 @@ footer .copy {
   padding-top: 62.5%;
   position: relative;
   overflow: hidden;
+  border-bottom: 1px solid #ddd;
 }
 
 .service-image-wrapper img {
@@ -605,8 +607,6 @@ footer .copy {
 /* サービスのテキスト */
 .service-text-wrapper {
   background-color: #fff;
-  -webkit-box-shadow: 0 0 20px #ccc;
-          box-shadow: 0 0 20px #ccc;
   padding: 16px;
   width: 100%;
   min-height: 200px;
@@ -641,6 +641,7 @@ footer .copy {
             justify-content: space-between;
     position: relative;
     z-index: 1;
+    border: none;
   }
   .service .service-wrapper:before {
     content: "";
@@ -657,12 +658,17 @@ footer .copy {
   .service-image-wrapper {
     margin-bottom: 0px;
     width: 48%;
+    -webkit-box-shadow: 0px 0px 6px #ccc;
+            box-shadow: 0px 0px 6px #ccc;
     padding-top: 0;
+    border-bottom: none;
   }
   /* サービスのテキスト */
   .service-text-wrapper {
     padding: 32px 24px;
     width: 48%;
+    -webkit-box-shadow: 0 0 6px #ccc;
+            box-shadow: 0 0 6px #ccc;
   }
   .service-text-wrapper .h3-title {
     margin-bottom: 24px;
