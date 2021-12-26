@@ -27,12 +27,16 @@ img{
   vertical-align: bottom;
 }
 
-$headigColor: #E3E3E3;
-$textColorA: #2a333c;
+$textColorA: #333;
 $textColorB: #FFFDFE;
 $textColorC: #808080;
-$accentColor: #fc2;
 
+$backgroundColor: #fafafa;
+$backgroundColorB: #ddd;
+
+$mainColor:#494544;
+$subColor: #bac8c6;
+$accentColor: #c41a30;
 
 @mixin btn{
   width: 200px;
@@ -98,14 +102,13 @@ body {
 section{
   padding: 40px 0 60px;
   position:  relative;
-  z-index: 1;
 }
 
 section:nth-child(odd){
-  background-color: #fff;
+  background-color: $backgroundColor;
 }
 section:nth-child(even){
-  background-color: #f7f7f7;
+  background-color: $backgroundColorB;
 }
 
 .pc-wrapper{
@@ -124,7 +127,9 @@ section:nth-child(even){
   .section-heading{
     font-size: calc(4.375rem + ((1vw - 3.75px) * 3.7073));
     letter-spacing: 0.15em;
-    color: $headigColor;
+    color: $accentColor;
+    color: $backgroundColorB;
+    opacity: .5;
     line-height: 1;
     text-align: center;
   }
@@ -182,6 +187,9 @@ section:nth-child(even){
 /* ------------------------------------ */
 header{
   background-color: #DBDBDB;
+  background-color: $mainColor;
+  color: #fff;
+  color: $subColor;
   padding: 24px 0;
 
   h1{
@@ -189,7 +197,7 @@ header{
     font-weight: 300;
     font-family: "Hiragino Kaku Gothic ProN";
     letter-spacing: normal;
-    color: #707070;
+    color: $subColor;
   }
 }
   
@@ -250,6 +258,7 @@ body.active{
 .sp-nav{
   position: fixed;
   background-color: rgba(0, 0, 0, 0.9);
+  background-color: $mainColor;
   z-index: 1000;
   width: 80%;
   height: 100vh;
@@ -257,7 +266,7 @@ body.active{
   left: 0;
   text-align: center;
   transition: all .4s;
-  color: #fff;
+  color: $subColor;
 
   .nav-menu{
     position: absolute;
@@ -283,7 +292,7 @@ body.active{
 
 /* スクリーン */
 .screen{
-  background-color: #fc2;
+  background-color: $accentColor;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -348,7 +357,7 @@ footer{
   height: 80px;
   text-align: center;
   line-height: 80px;
-  border-top: 2px solid #fc2;
+  border-top: 2px solid $accentColor;
   position: relative;
   margin-top: auto;
 
@@ -540,29 +549,19 @@ footer{
 /* ------------------------------------ */
 .service{
   width: 100%;
-  .inner{
-    padding: 0;
-  }
 
   .service-wrapper{
     margin-bottom: 30px;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #ddd;
   }
 }
 
 /* サービスの画像 */
 .service-image-wrapper{
   width: 100%;
-  padding-top: 62.5%;
-  position: relative;
   overflow: hidden;
-  border-bottom: 1px solid #ddd;
+  aspect-ratio: 16 / 9;
 
   img{
-    position: absolute;
-    top:0;
     height: 100%;
     width: 100%;
     object-fit: cover;
@@ -584,7 +583,7 @@ footer{
     position: absolute;
     content: " ";
     display: block;
-    border-bottom: solid 3px #ED9595;
+    border-bottom: solid 3px $accentColor;
     bottom: -3px;
     width: 30%;
   }
@@ -592,7 +591,7 @@ footer{
 
 /* サービスのテキスト */
 .service-text-wrapper{
-  background-color: #fff;
+  background-color: rgba(255, 255,255, .8);
   padding: 16px;
   width: 100%;
   min-height: 200px;
@@ -606,6 +605,7 @@ footer{
 
 @media (min-width: 575px){
   .service{
+
     .service-wrapper{
       width: 80%;
       margin: 0 auto 60px;
@@ -615,94 +615,80 @@ footer{
 
 @media (min-width: 1025px) {
   .service{
+    .inner{
+      max-width: 1100px;
+      padding: 0 50px;
+    }
+
     .service-wrapper{
       width: 100%;
-      margin: 0 auto;
-      min-height: 260px;
-      margin-bottom: 320px;
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
+      margin-bottom: 250px;
       position: relative;
       z-index: 1;
-      border: none;
 
-      &:before{
+      &::after{
         content: "";
         position: absolute;
-        background-image: linear-gradient(to right, #243949 0%, #517fa4 100%);
+        background: $subColor;
         width: 80%;
         height:100%;
         z-index: -1;
         left: 10%;
-        top: 50%;
+        top: 20%;
       }
     }
   }
   
   /*サービスの画像*/
   .service-image-wrapper{
-    margin-bottom: 0px;
-    width: 48%;
-    box-shadow: 0px 0px 6px #ccc;
-    padding-top: 0;
-    border-bottom: none;
+    width: 60%;
+    height: 100%;
+    // box-shadow: 0px 0px 6px #ccc;
   }
   
   /* サービスのテキスト */
   .service-text-wrapper{
     padding: 32px 24px;
-    width: 48%;
-    box-shadow: 0 0 6px #ccc;
+    width: 460px;
+    position: absolute;
+    right: 0;
+    top: 200px;
+    min-height: 260px;
+    border: 2px solid darken( $subColor, 20% );
+    box-shadow: 0 0 10px #ccc;
   
     .h3-title{
       margin-bottom: 24px;
     }
   }
-  
-  /* 奇数番目のservice-wrapper */
-  .service-wrapper.odd{
-    .service-image-wrapper{
-      margin-right: 80px;
-    }
-
-    .service-text-wrapper{
-      width: 48%;
-      top: 100%;
-      right: 0%;
-      height: 100%;
-      position: absolute;
-    }
-  }
 
   /* 偶数番目のservice-wrapper */
   .service-wrapper.even{
+    display: flex;
+    flex-direction: row-reverse;
     .service-image-wrapper{
-      margin-left: 80px;
-      order: 1;
-      top: 100%;
-      right: 0%;
       height: 100%;
-      position: absolute;
+      img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .service-text-wrapper{
+      left: 0;
     }
   }
-
-
-
-
-
-  // .service{
-  // }
   
-  // /* サービスのテキスト */
-  // .service-text-wrapper{
-  //   .h3-title{
-  //     font-size: rem(32);
-  //     span{
-  //       font-size: rem(40);
-  //     }
-  //   }
-  // }
+  /* サービスのテキスト */
+  .service-text-wrapper{
+    .h3-title{
+      font-size: rem(32);
+      span{
+        font-size: rem(40);
+      }
+    }
+  }
 }
 
 /* ------------------------------------ */
@@ -982,7 +968,6 @@ margin-bottom: 10px;
 
 /* パンクズリスト */
 .breadcrumbs{
-  // border: 1px solid #000000;
   color: $textColorC;
   padding: 0.5em 1em;
 
@@ -997,7 +982,6 @@ margin-bottom: 10px;
     }
   
     a {
-      // color: #555555;
       transition: all .4s;
       &:hover{
         opacity: .6;
@@ -1005,7 +989,6 @@ margin-bottom: 10px;
     }
   }
 }
-
 
 .breadcrumbs .breadcrumb_inner span span::before {
   content: "";
@@ -1372,9 +1355,6 @@ margin-bottom: 10px;
   }
 }
 
-
-
-
 /* -------------------------------------------- */
 /* プロフィールページ */
 /* -------------------------------------------- */
@@ -1607,6 +1587,21 @@ margin-bottom: 10px;
       font-size: rem(48);
     }
   }
+}
+
+
+/* ------------------------------------ */
+/* 下層ページ */
+/* ------------------------------------ */
+
+@media (min-width: 575px) {
+
+  
+}
+
+@media (min-width: 1025px) {
+
+  
 }
 
 
