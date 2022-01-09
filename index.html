@@ -29,6 +29,7 @@
             <li><a href="#contact">Contact</a></li>
             <li><a href="404.html">Blog</a></li>
             <li><a href="test.html">裏</a></li>
+            <li><a href="top.html">テスト</a></li>
           </ul>
         </nav>
         <!-- /header-nav -->
@@ -66,6 +67,7 @@
           <p class="mv-text">
             <img src="images/mv-text.png" alt="">
           </p>
+          
           <svg class="arrows">
             <path class="a1" d="M0 0 L30 32 L60 0"></path>
             <path class="a2" d="M0 20 L30 52 L60 20"></path>
@@ -156,13 +158,13 @@
             </div>
 
             <div class="service-container">
-              <div class="service-wrapper odd">
+              <div class="service-wrapper odd delayScroll">
     
-                <figure class="service-image-wrapper fadeInLeftTrigger">
+                <figure class="service-image-wrapper fadeIntr">
                   <img src="images/service-1.jpeg" alt="">
                 </figure>
                 
-                <div class="service-text-wrapper fadeInRightTrigger">
+                <div class="service-text-wrapper fadeIntr">
       
                   <div class="service-text-content">
                     <h3 class="h3-title"><span>01</span>.Webデザイン</h3>
@@ -176,14 +178,14 @@
               </div>
               <!-- service-wrapperここまで -->
 
-              <div class="service-wrapper even">
-                <figure class="service-image-wrapper fadeInRightTrigger">
+              <div class="service-wrapper even delayScroll">
+                <figure class="service-image-wrapper fadeIntr">
                   <img src="images/service-3.jpeg" alt="">
                 </figure>
                 
-                <div class="service-text-wrapper fadeInLeftTrigger">
+                <div class="service-text-wrapper fadeIntr">
                 
-                  <div class="service-text-content ">
+                  <div class="service-text-content">
                     <h3 class="h3-title"><span>02</span>.コーディング</h3>
                     <p class="service-text">ワイヤーフレームをもとに忠実に再現をし、様々な動きやエフェクトをつけることができます。またメンテナンスがしやすく見やすいコードを書くように努めています。</p>
                   </div>
@@ -193,12 +195,12 @@
               </div>
               <!-- service-wrapperここまで -->
 
-              <div class="service-wrapper odd">
-                <figure class="service-image-wrapper fadeInLeftTrigger">
+              <div class="service-wrapper odd delayScroll">
+                <figure class="service-image-wrapper fadeIntr">
                   <img src="images/service-2.jpeg" alt="">
                 </figure>
                 
-                <div class="service-text-wrapper fadeInRightTrigger">
+                <div class="service-text-wrapper fadeIntr">
                 
                   <div class="service-text-content">
                     <h3 class="h3-title"><span>03</span>.CMS化</h3>
@@ -228,7 +230,7 @@
             <p class="prof-text">愛知県内の大学を卒業後家業の飲食店で勤務。<br>廃業後、県内の書店に就職し書籍担当となりました。そこで店舗運営や棚作りやアルバイトの育成などを経験しつつ、仕事の一つであったPOP作成などを通し、デザインと出会いました。<br>そこからWEBデザインに興味を持ち、独学で二年ほどWebデザインとコーディングを学び初め、2020年に退社し現在も日々学習をしております。</p>
             <div class="btn"><a href="profile.html">Read More</a></div>
   
-            <p class="blog-pr">学習のための<br>勉強ブログも書いております</p>
+            <p class="blog-pr">学習のための<br><span>ブログも書いております</span></p>
             <p class="blog-banner">
               <a href="">
                 <img src="images/blog-logo.png" alt="">
@@ -236,6 +238,7 @@
             </p>
   
           </div>
+          <!-- /inner -->
     
         </section>
     
@@ -263,16 +266,27 @@
               </div>
             
               <div class="form-parts">
-                <div class="label-wrapper"><span class="label free">任意</span><label for="title">タイトル</label></div>
+                <div class="label-wrapper">
+                  <span class="label free">任意</span>
+                  <label for="title">タイトル</label>
+                </div>
                 <input type="text" id="title" placeholder="">
               </div>
             
               <div class="form-parts">
-                <div class="label-wrapper"><span class="label must">任意</span><label for="textarea">お問い合わせ内容</div></label>
+                <div class="label-wrapper">
+                  <span class="label must">任意</span>
+                  <label for="textarea">お問い合わせ内容</label>
+                </div>
                 <textarea type="text" id="textarea" placeholder="ご自由にお書きください"></textarea>
               </div>
+
+              <div class="form-parts acceptance">
+                <p>スパムメール防止のため、上記の記入事項にお間違いがなければお手数ですがチェックを入れてください。</p>
+              </div>
+
               <div class="form-parts">
-                <input type="submit" value="送信"></input>
+                <input type="submit" value="送信">
               </div>
               
             </div>
