@@ -112,10 +112,6 @@ $(function(){
     });
   }
 
-  $(window).scroll(function () {
-    TextTypingAnime();
-  });
-
   $(window).on('load', function () {
     var element = $(".TextTyping");
     element.each(function () {
@@ -132,14 +128,18 @@ $(function(){
 
     });
 
+    $('.TextTyping span:nth-child(12)').append('<br>');
+
     TextTypingAnime();
   });
+
+
 
   var fixedHeaderHight = $('.fixed-icon-wrapper').outerHeight(true);
 console.log(fixedHeaderHight)
   $(window).on('scroll', function(){
     var section = $('.mv').offset().top;
-    if($(this).scrollTop()>= section-fixedHeaderHight){ //section2からヘッダー分を引いた高さに入るとヘッダーがフェードイン。
+    if($(this).scrollTop()>= section-fixedHeaderHight){ 
       $('header').addClass('fadein');
     }
     else{
@@ -155,7 +155,6 @@ console.log(fixedHeaderHight)
     return false;
   });
   
-
 
 
 
