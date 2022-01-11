@@ -25,58 +25,6 @@ img {
 }
 
 /* 色の設定 */
-/* 共通設定 */
-body {
-  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-  font-size: calc(0.875rem + ((1vw - 3.75px) * 0.2424));
-  line-height: 1.5;
-  letter-spacing: 0.15em;
-  color: #333;
-  background-color: #fafafa;
-}
-
-.inner {
-  margin: 0 auto;
-  max-width: 1200px;
-  width: 100%;
-  padding: 0 4%;
-}
-
-/* ボタン */
-.rpg-btn {
-  background-color: #000;
-  display: block;
-  width: 200px;
-  max-width: 100%;
-  padding: 6px;
-  margin: 0 auto;
-  text-align: center;
-  -webkit-transition: all .4s;
-  transition: all .4s;
-  font-size: 1rem;
-  border-radius: 6px;
-}
-
-.rpg-btn .btn-text {
-  color: #fff;
-  border-radius: 4px;
-  border: 4px solid #fff;
-  padding: 20px;
-  display: block;
-  line-height: 1;
-  position: relative;
-}
-
-.rpg-btn .btn-text::before {
-  content: "\f0da";
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
-}
-
-.rpg-btn:hover {
-  opacity: .8;
-}
-
 /* 枠 */
 /* サービスのタイトル */
 .h3-underLine::after {
@@ -91,17 +39,29 @@ body {
 /* ------------------------------------ */
 /* 共通部分 */
 /* ------------------------------------ */
+/* 共通設定 */
+body {
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: calc(0.875rem + ((1vw - 3.75px) * 0.2424));
+  line-height: 1.5;
+  letter-spacing: 0.15em;
+  color: #333;
+}
+
+.inner {
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 4%;
+}
+
 section {
   padding: 70px 0 100px;
   position: relative;
   background-color: #000;
 }
 
-section:nth-child(even) {
-  background-color: #F4F5F7;
-  background-color: #CFCEAF;
-}
-
+/* 偶数番目のセクション */
 .pc-wrapper .contents-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -155,8 +115,45 @@ section:nth-child(even) {
   content: "〜";
 }
 
+/* h3の見出し */
 .h3-title {
   font-size: calc(1.25rem + ((1vw - 3.75px) * 0.5517));
+}
+
+/* ボタン */
+.rpg-btn {
+  background-color: #000;
+  display: block;
+  width: 200px;
+  max-width: 100%;
+  padding: 6px;
+  margin: 0 auto;
+  text-align: center;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+  font-size: 1rem;
+  border-radius: 6px;
+  margin-bottom: 60px;
+}
+
+.rpg-btn .btn-text {
+  color: #fff;
+  border-radius: 4px;
+  border: 4px solid #fff;
+  padding: 20px;
+  display: block;
+  line-height: 1;
+  position: relative;
+}
+
+.rpg-btn .btn-text::before {
+  content: "\f0da";
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+
+.rpg-btn:hover {
+  opacity: .8;
 }
 
 .fa-external-link-alt {
@@ -197,8 +194,13 @@ section:nth-child(even) {
   .section-heading-sub-title {
     font-size: 1.125rem;
   }
+  /* h3の見出し */
   .h3-title {
     font-size: 1.5rem;
+  }
+  /* ボタン */
+  .rpg-btn {
+    margin-bottom: 80px;
   }
 }
 
@@ -464,90 +466,135 @@ footer .copy {
   background-color: #000;
   width: 100%;
   height: 500px;
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
 }
 
-.mv .mv-text {
+.mv .inner {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.mv-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 90%;
   color: #fff;
   border: 5px solid #fff;
   border-radius: 8px;
-  font-size: 30px;
+  font-size: 18px;
   letter-spacing: 0.2em;
   text-align: center;
   max-width: 100%;
-  padding: 30px;
+  padding: 1.5em 1em;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.TextTyping span {
+  display: none;
+  color: #fff;
+}
+
+/*文字列後ろの線の設定*/
+.TextTyping::after {
+  content: "|";
+  -webkit-animation: typinganime .8s ease infinite;
+          animation: typinganime .8s ease infinite;
+  color: #fff;
+}
+
+@-webkit-keyframes typinganime {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes typinganime {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @media (min-width: 900px) {
   .mv {
     height: 100vh;
-    padding-bottom: 120px;
+  }
+  .mv-text {
+    font-size: 40px;
+    width: 80%;
   }
 }
 
 /* ------------------------------------ */
 /* works */
 /* ------------------------------------ */
-.works .h3-title {
-  text-align: center;
-  display: block;
-}
-
-.works-wrapper .items-wrapper {
+/*---- レイアウトここから ----*/
+.items {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   row-gap: 30px;
+}
+
+.works-wrapper__works,
+.works-wrapper__cording {
   margin-bottom: 60px;
 }
 
-.works-wrapper .works-sentence {
+/*---- レイアウトここまで ----*/
+/* 背景画像 */
+.works {
+  position: relative;
+  background: url(../images/18sa.jpg) center/cover no-repeat;
+  background-attachment: fixed;
+}
+
+/* h3のタイトル */
+.works .h3-title {
+  text-align: center;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* 注釈 */
+.works-sentence {
   text-align: center;
   margin-bottom: 20px;
 }
 
-.works-wrapper_works {
-  margin-bottom: 60px;
-}
-
-/* worksのカード */
-.items-wrapper .item-card {
+/* worksのitem */
+.item {
   width: 100%;
-  border: 1px solid #ddd;
   border-radius: 4px;
   background-color: #fff;
   overflow: hidden;
 }
 
-.items-wrapper .item-card a {
-  border-radius: 4px;
+.item .item-wrapper {
   display: block;
   width: 100%;
 }
 
-.items-wrapper .item-card .work-image {
+/* itemの画像 */
+.item-image {
   width: 100%;
   padding-top: 56.4%;
   position: relative;
   overflow: hidden;
 }
 
-.items-wrapper .item-card .work-image img {
+.item-image img {
   position: absolute;
   top: 0;
   left: 0;
@@ -559,43 +606,50 @@ footer .copy {
   transition: all .6s;
 }
 
-.items-wrapper .item-card .work-title {
+/* itemのタイトル */
+.item-title {
   text-align: center;
   padding: 1em;
 }
 
 @media (min-width: 575px) {
-  .works-wrapper .works-sentence {
-    margin-bottom: 40px;
+  /*---- レイアウトここから ----*/
+  .items {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
-  /* worksのカード */
-  .items-wrapper .item-card {
+  .works-wrapper__works,
+  .works-wrapper__cording {
+    margin-bottom: 80px;
+  }
+  /*---- レイアウトここまで ----*/
+  /* worksのitem */
+  .item {
     width: 49%;
   }
 }
 
 @media (min-width: 1025px) {
-  .works .h3-title {
-    margin-bottom: 20px;
-  }
-  .works-wrapper .items-wrapper {
-    row-gap: 0px;
-    margin-bottom: 80px;
-  }
-  .works-wrapper_works {
-    margin-bottom: 80px;
-  }
-  /* worksのカード */
-  .items-wrapper {
+  /*---- レイアウトここから ----*/
+  .items {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     /* 3カラムのスペース用 */
   }
-  .items-wrapper .item-card {
-    width: 32%;
-  }
-  .items-wrapper::after {
+  .items::after {
     content: "";
     display: block;
     width: 33%;
+  }
+  .works-wrapper__cording .items {
+    row-gap: 0;
+  }
+  /*---- レイアウトここまで ----*/
+  /* worksのitem */
+  .item {
+    width: 32%;
   }
 }
 
@@ -722,6 +776,12 @@ footer .copy {
 /* ------------------------------------ */
 /* profile */
 /* ------------------------------------ */
+/* 背景画像 */
+.profile {
+  background: url(../images/18sa.jpg) center/cover no-repeat;
+  background-attachment: fixed;
+}
+
 .profile .name {
   font-size: 20px;
   margin-bottom: 20px;
@@ -1515,34 +1575,4 @@ span.wpcf7-not-valid-tip::before {
 /* ------------------------------------ */
 /* 下層ページ */
 /* ------------------------------------ */
-.TextTyping span {
-  display: none;
-  color: #fff;
-}
-
-/*文字列後ろの線の設定*/
-.TextTyping::after {
-  content: "|";
-  -webkit-animation: typinganime .8s ease infinite;
-          animation: typinganime .8s ease infinite;
-  color: #fff;
-}
-
-@-webkit-keyframes typinganime {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes typinganime {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
 /*# sourceMappingURL=styles.css.map */

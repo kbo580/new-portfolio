@@ -41,59 +41,6 @@ $mainColorB: darken(#494544, 5%);
 $subColor: #bac8c6;
 $accentColor: #c41a30;
 
-
-/* 共通設定 */
-body {
-  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-  font-size: calc(0.875rem + ((1vw - 3.75px) * 0.2424));
-  line-height: 1.5;
-  letter-spacing: 0.15em;
-  color: $textColorA;
-  background-color: $backgroundColor;
-}
-
-.inner{
-  margin: 0 auto;
-  max-width: 1200px;
-  width: 100%;
-  // background-color: rgba(241,92,168,0.2);
-  padding: 0 4%;
-}
-
-/* ボタン */
-.rpg-btn{
-  background-color: #000;
-  display: block;
-  width: 200px;
-  max-width: 100%;
-  padding: 6px;
-  margin: 0 auto;
-  text-align: center;
-  transition: all .4s;
-  font-size: rem(16);
-  border-radius: 6px;
-  
-  .btn-text{
-    color: #fff;
-    border-radius: 4px;
-    border: 4px solid #fff;
-    padding: 20px;
-    display: block;
-    line-height: 1;
-    position: relative;
-
-    &::before{
-      content: "\f0da";
-      font-family: 'Font Awesome 5 Free';
-      font-weight: 900;
-    }
-  }
-
-  &:hover{
-    opacity: .8;
-  }
-}
-
 /* 枠 */
 @mixin border{
   border: 5px solid #fff;
@@ -115,15 +62,50 @@ body {
 /* ------------------------------------ */
 /* 共通部分 */
 /* ------------------------------------ */
+/* 共通設定 */
+body {
+  font-family:  "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  font-size: calc(0.875rem + ((1vw - 3.75px) * 0.2424));
+  line-height: 1.5;
+  letter-spacing: 0.15em;
+  color: $textColorA;
+  // background-color: $backgroundColor;
+}
+
+.inner{
+  margin: 0 auto;
+  max-width: 1200px;
+  width: 100%;
+  // background-color: rgba(241,92,168,0.2);
+  padding: 0 4%;
+}
+
 section{
   padding: 70px 0 100px;
   position:  relative;
   background-color: #000;
 }
 
+/* 偶数番目のセクション */
 section:nth-child(even){
-  background-color: $backgroundColorB;
-  background-color: #CFCEAF;
+  // background-color: $backgroundColorB;
+  // background-color: #CFCEAF;
+  // background-color: #fafafa;
+  // background-color: #000;
+  // background: url(../images/18sa.jpg) center / cover no-repeat;
+}
+
+.works::before{
+  // background: url(../images/18sa.jpg) no-repeat center;
+  // background-size: cover;
+  // content: "";
+  // position: fixed;
+  // display: block;
+  // top: 0;
+  // left: 0;
+  // z-index: -1;
+  // width: 100%;
+  // height: 100vh;
 }
 
 .pc-wrapper{
@@ -179,8 +161,44 @@ section:nth-child(even){
   }
 }
 
+/* h3の見出し */
 .h3-title{
   font-size: calc(1.25rem + ((1vw - 3.75px) * 0.5517));
+}
+
+/* ボタン */
+.rpg-btn{
+  background-color: #000;
+  display: block;
+  width: 200px;
+  max-width: 100%;
+  padding: 6px;
+  margin: 0 auto;
+  text-align: center;
+  transition: all .4s;
+  font-size: rem(16);
+  border-radius: 6px;
+  margin-bottom: 60px;
+  
+  .btn-text{
+    color: #fff;
+    border-radius: 4px;
+    border: 4px solid #fff;
+    padding: 20px;
+    display: block;
+    line-height: 1;
+    position: relative;
+
+    &::before{
+      content: "\f0da";
+      font-family: 'Font Awesome 5 Free';
+      font-weight: 900;
+    }
+  }
+
+  &:hover{
+    opacity: .8;
+  }
 }
 
 .fa-external-link-alt{
@@ -223,11 +241,16 @@ section:nth-child(even){
     font-size: rem(18);
   }
 
+  /* h3の見出し */
   .h3-title{
     font-size: rem(24);
   }
-}
 
+  /* ボタン */
+  .rpg-btn{
+    margin-bottom: 80px;
+  }
+}
 
 /* ------------------------------------ */
 /* header */
@@ -470,149 +493,156 @@ footer{
 /* ------------------------------------ */
 .mv{
   background-color: #000;
-  // background-color: #dafafa;
   width: 100%;
   height: 500px;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-
-  .mv-text{
-    // position: absolute;
-    // left: 50%;
-    // bottom: 2%;
-    // transform: translate(-50%, -50%);
-    color: #fff;
-    border: 5px solid #fff;
-    border-radius: 8px;
-    font-size: 30px;
-    letter-spacing: 0.2em;
-    // height: 200px;
-    text-align: center;
-    // line-height: 200px;
-    max-width: 100%;
-    padding: 30px;
+  .inner{
+    position: relative;
+    height: 100%;
+    width: 100%;
   }
+}
+
+.mv-text{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  color: #fff;
+  border: 5px solid #fff;
+  border-radius: 8px;
+  font-size: 18px;
+  letter-spacing: 0.2em;
+  text-align: center;
+  max-width: 100%;
+  padding: 1.5em 1em;
+  align-self: flex-end;
+}
+
+.TextTyping span {
+	display: none;
+  color: #fff;
+}
+
+/*文字列後ろの線の設定*/
+.TextTyping::after {
+  content: "|";
+	animation: typinganime .8s ease infinite;
+  color: #fff;
+}
+
+@keyframes typinganime{
+	from{opacity:0}
+	to{opacity:1}
 }
 
 @media (min-width: 900px) {
   .mv{
     height: 100vh;
-    padding-bottom: 120px;
-    .mv-text{
-      // max-width: 500px;
-    }
+  }
+
+  .mv-text{
+    font-size: 40px;
+    width: 80%;
   }
 }
 
 /* ------------------------------------ */
 /* works */
 /* ------------------------------------ */
+/*---- レイアウトここから ----*/
+.items{
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 30px;
+}
+
+.works-wrapper__works,
+.works-wrapper__cording{
+  margin-bottom: 60px;
+}
+/*---- レイアウトここまで ----*/
+/* 背景画像 */
+.works{
+  position: relative;
+  background: url(../images/18sa.jpg) center / cover no-repeat;
+  background-attachment: fixed;
+}
+
+/* h3のタイトル */
 .works{
   .h3-title{
     text-align: center;
     display: block;
+    margin-bottom: 10px;
   }
 }
 
-.works-wrapper{
-  .items-wrapper{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    row-gap: 30px;
-    margin-bottom: 60px;
-  }
-
-  .works-sentence{
-    text-align: center;
-    margin-bottom: 20px;
-  }
+/* 注釈 */
+.works-sentence{
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-.works-wrapper_works{
-  margin-bottom: 60px;
-}
-
-/* worksのカード */
-.items-wrapper{
-  .item-card{
+/* worksのitem */
+.item{
+  width: 100%;
+  border-radius: 4px;
+  background-color: #fff;
+  overflow: hidden;
+  
+  .item-wrapper{
+    display: block;
     width: 100%;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: #fff;
-    overflow: hidden;
-    
-    a{
-      border-radius: 4px;
-      display: block;
-      width: 100%;
-    }
-
-    .work-image{
-      width: 100%;
-      padding-top: 56.4%;
-      position: relative;
-      overflow: hidden;
-    
-      img{
-        position: absolute;
-        top:0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: all .6s;
-      }
-    }
-
-    .work-title{
-      text-align: center;
-      padding: 1em;
-    }
   }
+}
+
+/* itemの画像 */
+.item-image{
+  width: 100%;
+  padding-top: 56.4%;
+  position: relative;
+  overflow: hidden;
+
+  img{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all .6s;
+  }
+}
+
+/* itemのタイトル */
+.item-title{
+  text-align: center;
+  padding: 1em;
 }
 
 @media (min-width: 575px) {
-  .works-wrapper{
-    .works-sentence{
-      margin-bottom: 40px;
-    }
+  /*---- レイアウトここから ----*/
+  .items{
+    justify-content: space-between;
   }
 
-  /* worksのカード */
-  .items-wrapper{
-    .item-card{
-      width: 49%;
-    }
+  .works-wrapper__works,
+  .works-wrapper__cording{
+    margin-bottom: 80px;
+  }
+  /*---- レイアウトここまで ----*/
+
+  /* worksのitem */
+  .item{
+    width: 49%;
   }
 }
 
 @media (min-width: 1025px) {
-  .works{
-    .h3-title{
-      margin-bottom: 20px;
-    }
-  }
-
-  .works-wrapper{
-    .items-wrapper{
-      row-gap: 0px;
-      margin-bottom: 80px;
-    }
-  }
-
-  .works-wrapper_works{
-    margin-bottom: 80px;
-  }
-
-  /* worksのカード */
-  .items-wrapper{
-    .item-card{
-      width: 32%;
-    }
+  /*---- レイアウトここから ----*/
+  .items{
+    justify-content: space-between;
 
     /* 3カラムのスペース用 */
     &::after{
@@ -620,6 +650,16 @@ footer{
       display: block;
       width:33%;
     }
+  }
+
+  .works-wrapper__cording .items{
+    row-gap: 0;
+  }
+  /*---- レイアウトここまで ----*/
+
+  /* worksのitem */
+  .item{
+    width: 32%;
   }
 }
 
@@ -644,6 +684,7 @@ footer{
   margin-bottom: 60px;
 }
 /*---- レイアウトここまで ----*/
+
 /* セクションの見出し */
 .service{
   .section-heading{
@@ -744,6 +785,12 @@ footer{
 /* ------------------------------------ */
 /* profile */
 /* ------------------------------------ */
+/* 背景画像 */
+.profile{
+  background: url(../images/18sa.jpg) center / cover no-repeat;
+  background-attachment: fixed;
+}
+
 .profile{
   .name{
     font-size: 20px;
@@ -1602,27 +1649,3 @@ span.wpcf7-not-valid-tip {
 
 
 
-.TextTyping span {
-	display: none;
-  color: #fff;
-}
-
-/*文字列後ろの線の設定*/
-.TextTyping::after {
- 	content: "|";
-	animation: typinganime .8s ease infinite;
-  color: #fff;
-}
-
-@keyframes typinganime{
-	from{opacity:0}
-	to{opacity:1}
-}
-
-
-
-.TextTyping span:nth-child(12){
-  // color: red;
-  // border: 1px solid #fff;
-  // display: inline-block;
-}

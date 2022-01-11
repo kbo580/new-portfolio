@@ -61,8 +61,8 @@ $(function(){
     $('html, body').animate({'scrollTop': pos}, 300);
   });
 
-  // worksのカードにカーソルが乗った時の動き
-  $('.item-card').hover(function(){
+  // worksのitemにカーソルが乗った時の動き
+  $('.item').hover(function(){
     $(this).find('img').css('transform','scale(1.1, 1.1)');
   },function(){
     $(this).find('img').css('transform','scale(1, 1)');
@@ -128,15 +128,13 @@ $(function(){
 
     });
 
-    $('.TextTyping span:nth-child(12)').append('<br>');
+    $('.TextTyping span:nth-child(24)').append('<br>');
 
     TextTypingAnime();
   });
 
-
-
   var fixedHeaderHight = $('.fixed-icon-wrapper').outerHeight(true);
-console.log(fixedHeaderHight)
+  console.log(fixedHeaderHight)
   $(window).on('scroll', function(){
     var section = $('.mv').offset().top;
     if($(this).scrollTop()>= section-fixedHeaderHight){ 
