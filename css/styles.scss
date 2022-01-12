@@ -718,34 +718,52 @@ footer{
 }
 
 /* ------------------------------------ */
-/* service */
+/* skill */
 /* ------------------------------------ */
 /*---- レイアウトここから ----*/
-.service{
+.skill{
   width: 100%;
   color: #fff;
   background-color: #000;
 }
 
-.service-wrapper{
-  margin-bottom: 30px;
+.skill-wrapper{
+  margin-bottom: 60px;
+  // border: 1px solid #fff;
 }
 
-.service-item{
+.skill-item{
   width: 100%;
 }
 
-.service-item:not(:last-child){
+.skill-item:not(:last-child){
   margin-bottom: 60px;
 }
+
+.skill__sets{
+  // border: 1px solid #fff;
+}
+
+/* 個々のスキルの説明ブロック */
+.skill__set{
+  margin-bottom: 30px;
+  width: 100%;
+  // border: 1px solid #fc2;
+
+  &:last-child{
+    margin-bottom: 0;
+  }
+}
+
 /*---- レイアウトここまで ----*/
 
 /* セクションの見出し */
-.service{
+.skill{
   .section-heading{
     color: #fff;
     border-top: solid 5px #fff;
     border-bottom: solid 5px #fff;
+    margin-bottom: 120px;
     &::before,
     &:after{
       background-color: #fff;
@@ -754,7 +772,7 @@ footer{
 }
 
 /* サービスの画像 */
-.service_image-wrapper{
+.skill_image-wrapper{
   width: 100%;
   overflow: hidden;
   aspect-ratio: 16 / 9;
@@ -767,7 +785,7 @@ footer{
 }
 
 /* サービスのテキスト */
-.service_text-wrapper{
+.skill_text-wrapper{
   @include border;
   padding:  1.5em 1em;
   width: 100%;
@@ -777,34 +795,83 @@ footer{
   }
 }
 
+/* スキルの名前 */
+.skill__set-name{
+  margin-bottom: 8px;
+  font-weight: bold;
+  display: flex;
+  align-items: flex-end;
+  font-size: calc(1.125rem + ((1vw - 3.75px) * 0.2424));
+}
+
+/* スキルのアイコン */
+.skill__set-icon{
+  background: url(../images/wordpress_icon_130782.png) center/cover;
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+/* スキルの説明 */
+.skill__set-explain{
+  // color: $textColorC;
+}
+
 @media (min-width: 575px){
   /*---- レイアウトここから ----*/
-  .service-wrapper{
-    margin-bottom: 0;
+  .skill-wrapper{
+    margin-bottom: 140px;
     padding-top: 60px;
     display: flex;
     justify-content: space-between;
   }
 
-  .service-item{
+  .skill-item{
     width: 32%;
     display: flex;
     flex-direction: column;
   }
 
-  .service-item:not(:last-child){
+  .skill-item:not(:last-child){
     margin-bottom: 0px;
+  }
+
+  .skill_text-wrapper{
+    flex: 1;
+  }
+
+  .skill__sets-wrapper{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap:wrap;
+    width: 100%;
+  }
+
+  /* 個々のスキルの説明ブロック */
+  .skill__set{
+    width: 48%;
+    margin-bottom: 40px;
   }
   /*---- レイアウトここまで ----*/
 
-  .service_text-wrapper{
-    flex: 1;
+  /* スキルの名前 */
+  .skill__set-name{
+    margin-bottom: 12px;
+    font-size: rem(20);
   }
+
+  /* スキルのアイコン */
+  .skill__set-icon{
+    width: 50px;
+    height: 50px;
+  }
+
 }
 
 @media (min-width: 1025px){
   /*---- レイアウトここから ----*/
-  .service{
+  .skill{
     // height: 1000px;
   }
   /*---- レイアウトここまで ----*/
@@ -839,6 +906,7 @@ footer{
     margin: 0 auto 24px;
     position: relative;
     font-size: 16px;
+
     &:before, 
     &:after {
       content: '';
@@ -1521,43 +1589,6 @@ span.wpcf7-not-valid-tip {
   }
 }
 
-/* スキル */
-.skills{
-  .skills-container{
-    /* 個々のスキルの説明ブロック */
-    .skill-wrapper{
-      margin-bottom: 24px;
-      width: 100%;
-
-      /* スキルの名前 */
-      .skill-name{
-        margin-bottom: 8px;
-        font-weight: bold;
-        display: flex;
-        align-items: flex-end;
-
-        /* スキルのアイコン */
-        span{
-          background: url(../images/wordpress_icon_130782.png) center/cover;
-          width: 40px;
-          height: 40px;
-          display: inline-block;
-          margin-right: 8px;
-        }
-      }
-
-      &:last-child{
-        margin-bottom: 0;
-      }
-
-        /* スキルの説明 */
-      .skill-explain{
-        color: $textColorC;
-      }
-    }
-  }
-}
-
 @media (min-width: 575px) {
   /* サブタイトル */
   .about{
@@ -1579,33 +1610,6 @@ span.wpcf7-not-valid-tip {
       .about-text-list{
         li:not(:last-child){
           margin-bottom: 16px;
-        }
-      }
-    }
-  }
-
-  /* スキル */
-  .skills{
-    .skills-container{
-      display: flex;
-      justify-content: space-between;
-      flex-wrap:wrap;
-      width: 100%;
-
-      /* 個々のスキルの説明ブロック */
-      .skill-wrapper{
-        width: 48%;
-        margin-bottom: 40px;
-
-        /* スキルの名前 */
-        .skill-name{
-          margin-bottom: 12px;
-
-          /* スキルのアイコン */
-          span{
-            width: 50px;
-            height: 50px;
-          }
         }
       }
     }
