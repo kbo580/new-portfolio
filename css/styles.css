@@ -119,6 +119,24 @@ section {
   font-size: calc(1.25rem + ((1vw - 3.75px) * 0.5517));
 }
 
+/* 固定背景 */
+.fixed-bg {
+  position: relative;
+}
+
+.fixed-bg::before {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.2)), to(rgba(255, 255, 255, 0.2))), url(../images/DQ-bg.png) center/cover no-repeat;
+  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url(../images/DQ-bg.png) center/cover no-repeat;
+  content: "";
+  width: 100%;
+  display: block;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
 /* ボタン */
 .rpg-btn {
   background-color: #000;
@@ -162,6 +180,8 @@ section {
   border-radius: 4px 0 0 4px;
   padding: 0.5em 0.5em 0.5em 1em;
   position: relative;
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
 .wood::after {
@@ -273,11 +293,11 @@ header .inner {
     padding: 100px 0 120px;
     height: 100%;
     overflow-y: auto;
-    /*IE(Internet Explorer)・Microsoft Edgeへの対応*/
+    /*IE(Internet Explorer)・Microsoft Edge*/
     -ms-overflow-style: none;
-    /*Firefoxへの対応*/
+    /*Firefox*/
     scrollbar-width: none;
-    /*Google Chrome、Safariへの対応*/
+    /*Google Chrome、Safari*/
   }
   header::-webkit-scrollbar {
     display: none;
@@ -581,12 +601,7 @@ footer .copy {
 }
 
 /*---- レイアウトここまで ----*/
-/* 背景画像 */
 .works {
-  background-color: #FFF;
-  position: relative;
-  background: url(../images/18sa.jpg) center/cover no-repeat;
-  background-attachment: fixed;
   text-align: center;
 }
 
@@ -602,6 +617,8 @@ footer .copy {
   border-radius: 4px;
   background-color: #fff;
   overflow: hidden;
+  -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 10px 10px rgba(0, 0, 0, 0.15);
 }
 
 .item .item-wrapper {
@@ -699,12 +716,12 @@ footer .copy {
 }
 
 /* 個々のスキルの説明ブロック */
-.skill__set {
+.skill_set {
   margin-bottom: 30px;
   width: 100%;
 }
 
-.skill__set:last-child {
+.skill_set:last-child {
   margin-bottom: 0;
 }
 
@@ -748,7 +765,7 @@ footer .copy {
 }
 
 /* スキルの名前 */
-.skill__set-name {
+.skill_set-name {
   margin-bottom: 8px;
   font-weight: bold;
   display: -webkit-box;
@@ -761,8 +778,9 @@ footer .copy {
 }
 
 /* スキルのアイコン */
-.skill__set-icon {
-  background: url(../images/wordpress_icon_130782.png) center/cover;
+.skill_set-icon {
+  background-position: center;
+  background-size: cover;
   width: 40px;
   height: 40px;
   display: inline-block;
@@ -773,7 +791,7 @@ footer .copy {
 @media (min-width: 575px) {
   /*---- レイアウトここから ----*/
   .skill-wrapper {
-    margin-bottom: 140px;
+    margin-bottom: 160px;
     padding-top: 60px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -800,7 +818,7 @@ footer .copy {
         -ms-flex: 1;
             flex: 1;
   }
-  .skill__sets-wrapper {
+  .skill_sets-wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -812,18 +830,22 @@ footer .copy {
     width: 100%;
   }
   /* 個々のスキルの説明ブロック */
-  .skill__set {
+  .skill_set {
     width: 48%;
     margin-bottom: 40px;
   }
   /*---- レイアウトここまで ----*/
+  /* サービスの画像 */
+  .skill_image-wrapper {
+    margin-bottom: 10px;
+  }
   /* スキルの名前 */
-  .skill__set-name {
+  .skill_set-name {
     margin-bottom: 12px;
     font-size: 1.25rem;
   }
   /* スキルのアイコン */
-  .skill__set-icon {
+  .skill_set-icon {
     width: 50px;
     height: 50px;
   }
@@ -838,11 +860,6 @@ footer .copy {
 /* profile */
 /* ------------------------------------ */
 /* 背景画像 */
-.profile {
-  background: url(../images/18sa.jpg) center/cover no-repeat;
-  background-attachment: fixed;
-}
-
 .profile .name {
   font-size: 20px;
   margin-bottom: 20px;
