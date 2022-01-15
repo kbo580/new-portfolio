@@ -204,6 +204,7 @@ section:nth-child(even){
   }
 }
 
+
 .wood{
   display: inline-block;
   margin-bottom: 10px;
@@ -225,6 +226,18 @@ section:nth-child(even){
     width: 0;
     height: 0;
   }
+}
+
+.title-label{
+  position: absolute;
+  display: inline-block;
+  top: -10px;
+  left: 45px;
+  padding: 0 0.5em;
+  line-height: 1;
+  font-size: 18px;
+  background-color: #000;
+  font-weight: bold;
 }
 
 .fa-external-link-alt{
@@ -418,15 +431,8 @@ header{
 
 /* ナビのタイトル */
 .nav-title{
-  position: absolute;
-  display: inline-block;
   top: -10px;
   left: 45px;
-  padding: 0 0.5em;
-  line-height: 1;
-  font-size: 18px;
-  background-color: #000;
-  font-weight: bold;
 }
 
 /* ナビのリスト */
@@ -731,7 +737,7 @@ footer{
 }
 
 .skill-wrapper{
-  margin-bottom: 60px;
+  margin-bottom: 90px;
   // border: 1px solid #fff;
 }
 
@@ -744,7 +750,13 @@ footer{
 }
 
 .skill_sets{
-  // border: 1px solid #fff;
+  border: 1px solid #fff;
+  @include border;
+  position: relative;
+}
+
+.skill_sets-wrapper{
+  padding: 2em 1em;
 }
 
 /* 個々のスキルの説明ブロック */
@@ -766,7 +778,7 @@ footer{
     color: #fff;
     border-top: solid 5px #fff;
     border-bottom: solid 5px #fff;
-    margin-bottom: 120px;
+    margin-bottom: 80px;
     &::before,
     &:after{
       background-color: #fff;
@@ -787,7 +799,7 @@ footer{
   }
 }
 
-/* サービスのテキスト */
+/* スキルのテキスト */
 .skill_text-wrapper{
   @include border;
   padding:  1.5em 1em;
@@ -796,6 +808,12 @@ footer{
   .h3-title{
     margin-bottom: 10px;
   }
+}
+
+.skill_sets-label{
+  top: -10px;
+  left: 45px;
+  font-size: calc(1.25rem + ((1vw - 3.75px) * 0.5517));
 }
 
 /* スキルの名前 */
@@ -824,8 +842,15 @@ footer{
 
 @media (min-width: 575px){
   /*---- レイアウトここから ----*/
+  /* セクションの見出し */
+  .skill{
+    .section-heading{
+      margin-bottom: 120px;
+    }
+  }
+
   .skill-wrapper{
-    margin-bottom: 160px;
+    margin-bottom: 200px;
     padding-top: 60px;
     display: flex;
     justify-content: space-between;
@@ -858,6 +883,10 @@ footer{
     margin-bottom: 40px;
   }
   /*---- レイアウトここまで ----*/
+
+  .skill_sets-label{
+    font-size: rem(24);
+  }
 
   /* サービスの画像 */
   .skill_image-wrapper{
@@ -992,7 +1021,7 @@ footer{
 /* コンタクトページ */
 /* -------------------------------------------- */
 .contact{
-  background-color: #fff;
+  background: url(../images/contact-bg.jpg) center / cover no-repeat;
   .contact-greet{
     margin-bottom: 24px;
     text-align: center;
@@ -1687,6 +1716,5 @@ span.wpcf7-not-valid-tip {
 
   
 }
-
 
 
