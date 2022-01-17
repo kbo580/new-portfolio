@@ -333,38 +333,31 @@
             <div class="form-wrapper">
 
               <div class="form-parts">
-                <div class="label-wrapper"><span class="label must">必須</span><label for="name">お名前</label></div>
-                <input type="text" id="name" placeholder="山田 太郎">
-              </div>
-            
-              <div class="form-parts">
-                <div class="label-wrapper"><span class="label free">任意</span><label for="mail">メールアドレス</label></div>
-                <input type="email" id="mail" placeholder="abc@example.com">
-              </div>
-            
-              <div class="form-parts">
-                <div class="label-wrapper">
-                  <span class="label free">任意</span>
-                  <label for="title">タイトル</label>
-                </div>
-                <input type="text" id="title" placeholder="">
-              </div>
-            
-              <div class="form-parts">
-                <div class="label-wrapper">
-                  <span class="label must">任意</span>
-                  <label for="textarea">お問い合わせ内容</label>
-                </div>
-                <textarea type="text" id="textarea" placeholder="ご自由にお書きください"></textarea>
+                <label for="name" class="must title-label">お名前</label>
+                <input type="text" id="name"> 
               </div>
 
-              <div class="form-parts acceptance">
+              <div class="form-parts">
+                <label for="email" class="title-label">メールアドレス</label>
+                <input type="text" id="email"> 
+              </div>
+              
+              <div class="form-parts">
+                <label for="title" class="title-label">タイトル</label>
+                <input type="text" id="title"> 
+              </div>
+              
+              <div class="form-parts">
+                <label for="textarea" class="must title-label">お問い合わせ内容</label>
+                <textarea id="textarea"></textarea> 
+              </div>
+
+              <div class="acceptance">
                 <p>スパムメール防止のため、上記の記入事項にお間違いがなければお手数ですがチェックを入れてください。</p>
               </div>
 
-              <div class="form-parts">
-                <input type="submit" value="送信">
-              </div>
+              <input type="submit" value="送信" class="rpg-btn_submit">
+            
               
             </div>
             <!-- form-wrapperここまで -->
