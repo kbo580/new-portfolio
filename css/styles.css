@@ -14,6 +14,12 @@ body, h1, h2, h3, h4, h5, p, ul, li, ol, dl, dt, dd, figure, input, textarea {
   border-radius: 0;
 }
 
+input[type="text"],
+input[type="submit"],
+input[type="button"] {
+  -webkit-appearance: none;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -61,7 +67,6 @@ section {
   position: relative;
 }
 
-/* 偶数番目のセクション */
 .pc-wrapper .contents-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -102,6 +107,17 @@ section {
 
 .section-heading:after {
   right: 7px;
+}
+
+/* 偶数番目のセクションの見出し */
+section:nth-of-type(even) .section-heading {
+  color: #fff;
+  border-top: solid 5px #fff;
+  border-bottom: solid 5px #fff;
+}
+
+section:nth-of-type(even) .section-heading::before, section:nth-of-type(even) .section-heading:after {
+  background-color: #fff;
 }
 
 /* セクションの小見出し */
@@ -220,7 +236,7 @@ section {
   }
   /* セクションの見出し */
   .section-heading {
-    margin-bottom: 100px;
+    margin-bottom: 120px;
   }
 }
 
@@ -745,14 +761,7 @@ footer .copy {
 /*---- レイアウトここまで ----*/
 /* セクションの見出し */
 .skill .section-heading {
-  color: #fff;
-  border-top: solid 5px #fff;
-  border-bottom: solid 5px #fff;
   margin-bottom: 80px;
-}
-
-.skill .section-heading::before, .skill .section-heading:after {
-  background-color: #fff;
 }
 
 /* サービスの画像 */
@@ -981,91 +990,83 @@ footer .copy {
 /* -------------------------------------------- */
 /* コンタクトページ */
 /* -------------------------------------------- */
-.contact {
-  background: url(../images/contact-bg.jpg) center/cover no-repeat;
-}
-
-.contact .contact-greet {
-  margin-bottom: 24px;
-  text-align: center;
-}
-
-.contact .form-wrapper {
+/*---- レイアウトここから ----*/
+.form-wrapper {
   width: 100%;
   margin: 0 auto;
 }
 
-/* ラベル */
-.form-wrapper .form-parts .label-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  margin-bottom: 8px;
-  /* マーク */
-  /* 必須マーク */
-  /* 任意マーク */
+.form-parts {
+  margin-bottom: 30px;
 }
 
-.form-wrapper .form-parts .label-wrapper .label {
+/*---- レイアウトここまで ----*/
+.contact {
+  background: #000;
   color: #fff;
-  margin-right: 10px;
-  padding: 0.5em 1em;
-  border-radius: 5px;
-  font-size: 12px;
 }
 
-.form-wrapper .form-parts .label-wrapper .must {
-  background: #f58694;
-}
-
-.form-wrapper .form-parts .label-wrapper .free {
-  background: #7fbfff;
-}
-
-.form-wrapper .form-parts .label-wrapper label {
-  font-weight: bold;
+/* 冒頭の挨拶文 */
+.contact-greet {
+  margin-bottom: 24px;
+  text-align: center;
 }
 
 /* フォーム部品 */
-.form-wrapper .form-parts {
-  margin-bottom: 1.5em;
+.form-parts {
+  position: relative;
+  border: 5px solid #fff;
+  border-radius: 8px;
 }
 
-.form-wrapper .form-parts input[type="text"],
-.form-wrapper .form-parts input[type="email"],
-.form-wrapper .form-parts textarea {
+.form-parts .title-label {
+  font-size: 0.875rem;
+}
+
+.form-parts input[type="text"],
+.form-parts input[type="email"],
+.form-parts textarea {
   width: 100%;
-  padding: 0.5em 1em;
-  border: 1px solid #d0d5d8;
+  display: block;
+  padding: 1em;
+  border: 1px solid transparent;
+  background-color: inherit;
+  color: inherit;
   border-radius: 3px;
   font-size: 14px;
 }
 
-.form-wrapper .form-parts textarea {
+.form-parts textarea {
   height: 200px;
 }
 
-.form-wrapper .form-parts input[type="submit"] {
-  height: 100%;
-  border-radius: 6px;
-  border: 2px solid #333;
-  background-color: #fff;
+.acceptance {
+  margin-bottom: 60px;
+}
+
+.must::before {
+  content: "※";
+}
+
+.rpg-btn_submit {
+  width: 200px;
+  margin: 0 auto;
+  max-width: 100%;
+  background-color: #000;
+  display: block;
+  color: #fff;
+  padding: 20px;
+  line-height: 1;
+  text-align: center;
   -webkit-transition: all .4s;
   transition: all .4s;
-  color: #333;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 4px solid #fff;
 }
 
-.form-wrapper .form-parts input[type="submit"]:hover {
-  background-color: #808080;
-  color: #fff;
-  border: 2px solid #808080;
-}
-
-.form-wrapper .form-parts.acceptance {
-  margin-bottom: 60px;
+.rpg-btn_submit:hover {
+  opacity: .6;
 }
 
 /* contact form7用 */
@@ -1087,24 +1088,25 @@ span.wpcf7-not-valid-tip::before {
 }
 
 @media (min-width: 575px) {
-  .contact .form-wrapper {
+  /*---- レイアウトここから ----*/
+  .form-wrapper {
     max-width: 600px;
     margin: 0 auto;
   }
+  .form-parts {
+    margin-bottom: 40px;
+  }
+  /*---- レイアウトここまで ----*/
 }
 
 @media (min-width: 1025px) {
   .contact .contact-greet {
     margin-bottom: 40px;
   }
-  /* ラベル */
-  .form-wrapper .form-parts .label-wrapper {
-    /* マーク */
-  }
-  .form-wrapper .form-parts .label-wrapper .label {
-    font-size: 14px;
-  }
   /* フォーム部品 */
+  .form-wrapper .form-parts .title-label {
+    font-size: 1rem;
+  }
   .form-wrapper .form-parts input[type="text"],
   .form-wrapper .form-parts input[type="email"],
   .form-wrapper .form-parts textarea {
