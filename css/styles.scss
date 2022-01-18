@@ -75,6 +75,8 @@ body {
   letter-spacing: 0.15em;
   color: $textColorA;
   background-color: #000;
+  z-index: 1;
+  position: relative;
 }
 
 .inner{
@@ -162,7 +164,7 @@ section:nth-of-type(even) .section-heading{
 
 /* 固定背景 */
 .fixed-bg{
-  position: relative;
+  // position: relative;
 
   &::before{
     background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)) ,url(../images/DQ-bg.png) center / cover no-repeat;
@@ -176,6 +178,7 @@ section:nth-of-type(even) .section-heading{
     z-index: -1;
   }
 }
+
 
 /* ボタン */
 .rpg-btn{
@@ -509,7 +512,7 @@ body.is-active{
 /* footer */
 /* ------------------------------------ */
 footer{
-  background-color: $subColor;
+  // background-color: $subColor;
   height: 80px;
   border-top: 2px solid $accentColor;
   color: $mainColor;

@@ -53,6 +53,8 @@ body {
   letter-spacing: 0.15em;
   color: #333;
   background-color: #000;
+  z-index: 1;
+  position: relative;
 }
 
 .inner {
@@ -137,10 +139,6 @@ section:nth-of-type(even) .section-heading::before, section:nth-of-type(even) .s
 }
 
 /* 固定背景 */
-.fixed-bg {
-  position: relative;
-}
-
 .fixed-bg::before {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.2)), to(rgba(255, 255, 255, 0.2))), url(../images/DQ-bg.png) center/cover no-repeat;
   background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url(../images/DQ-bg.png) center/cover no-repeat;
@@ -491,7 +489,6 @@ body.is-active {
 /* footer */
 /* ------------------------------------ */
 footer {
-  background-color: #bac8c6;
   height: 80px;
   border-top: 2px solid #c41a30;
   color: #494544;
