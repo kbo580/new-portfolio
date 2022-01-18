@@ -164,21 +164,8 @@ section:nth-of-type(even) .section-heading{
 
 /* 固定背景 */
 .fixed-bg{
-  // position: relative;
-
-  &::before{
-    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)) ,url(../images/DQ-bg.png) center / cover no-repeat;
-    content: "";
-    width: 100%;
-    display: block;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-  }
+  background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)) ,url(../images/DQ-bg.png) top / cover no-repeat;
 }
-
 
 /* ボタン */
 .rpg-btn{
@@ -264,6 +251,11 @@ section:nth-of-type(even) .section-heading{
   .section-heading{
     margin-bottom: 120px;
   }
+
+  /* 固定背景 */
+  .fixed-bg{
+    background-attachment: fixed;
+  }
 }
 
 @media (min-width: 1025px){
@@ -345,7 +337,6 @@ header{
     padding: 100px 0 120px;
     height: 100%;
     overflow-y: auto;
-
 
     /*IE(Internet Explorer)・Microsoft Edge*/
     -ms-overflow-style: none;
@@ -512,10 +503,8 @@ body.is-active{
 /* footer */
 /* ------------------------------------ */
 footer{
-  // background-color: $subColor;
+  color: #fff;
   height: 80px;
-  border-top: 2px solid $accentColor;
-  color: $mainColor;
   display: flex;
   align-items: center;
   justify-content: center;
