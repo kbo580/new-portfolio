@@ -8,6 +8,9 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap" rel="stylesheet">
 
   <title></title>
@@ -17,43 +20,83 @@
   <div class="pc-wrapper"><!--サイドバー用-->
     <header>
       <div class="inner">
-        <h1><a href="index.html">Yuta Kobayashi's<br>Portfolio</a></h1>
         
-        <nav class="header-nav">
-          <ul>
-            <li><a href="#works">Works</a></li>
-            <li><a href="#service">Service</a></li>
-            <li><a href="#profile">Profile</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="404.html">Blog</a></li>
+        <h1 class="site-title"><a href="#">Yuta Kobayashi's<br>Portfolio</a></h1>
+
+        <div class="sp-nav-wrapper">
+          <div class="open-icon icon" id="open">メニュー</div>
+          <!-- /open-icon-->
+
+          <div class="fixed-icon-wrapper">
+            <div class="open-icon icon" id="open">メニュー</div>
+          </div>
+          <!-- /fixed-icon-wrapper -->
+
+          <nav id="sp-nav" class="sp-nav">
+            <div class="close-icon icon" id="close">閉じる</div>
+
+            <div class="sp-nav-list">
+              <span class="nav-title title-label">メニュー</span>
+              <ul class="nav-list">
+                <li><a href="index.html">Top</a></li>
+                <li><a href="#works">Works</a></li>
+                <li><a href="#skill">Skills</a></li>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="">Blog</a></li>
+              </ul>  
+            </div>
+            <!-- /sp-nav-list -->
+          </nav>
+          <!-- /sp-nav -->
+
+        </div>
+        <!-- /sp-nav-wrapper -->
+
+        <nav class="pc-nav">
+          <span class="nav-title title-label">メニュー</span>
+          <ul class="nav-list">
+            <li><span class="cursor"><i class="fas fa-caret-right"></i></span><a href="index.html">Top</a></li>
+            <li><span class="cursor"><i class="fas fa-caret-right"></i></span><a href="#works">Works</a></li>
+            <li><span class="cursor"><i class="fas fa-caret-right"></i></span><a href="#skill">Skills</a></li>
+            <li><span class="cursor"><i class="fas fa-caret-right"></i></span><a href="#profile">Profile</a></li>
+            <li><span class="cursor"><i class="fas fa-caret-right"></i></span><a href="#contact">Contact</a></li>
+            <li><span class="cursor"><i class="fas fa-caret-right"></i></span><a href="404.html">Blog</a></li>
+            <!-- <li><span class="cursor">a</span><a href="test.html">裏</a></li> -->
           </ul>
         </nav>
-        <!-- /header-nav -->
+        <!-- /pc-nav -->
+        
       </div>
+      <!-- /inner -->
     </header>
 
     <div class="contents-wrapper">
 
       <main>
-        <div class="page-mv">
-          <h2 class="page-heading">404 NOT FOUND</h2>  
-        </div>
-        <!-- /page-mv -->
 
-
-        <div class="breadcrumbs">
-          <div class="breadcrumb_inner">
-            <span><a href="/">ページ名</a></span> >
-            <span><a href="/">ページ名</a></span> >
-            <span>ページ名</span> 
-          </div>
-        </div>
-        <!-- /breadcrumbs -->
-
-        <section class="not-found-page">
+        <section class="not-found-page page__bgc">
           <div class="inner">
-            <h2>申し訳ありません<br>お探しのページはありませんでした。</h2>
+
+            <h2 class="section-heading">404 Not Found</h2>
+
+            <div class="breadcrumbs">
+              <div class="breadcrumb_inner">
+                <span><a href="/">ページ名</a></span> >
+                <span><a href="/">ページ名</a></span> >
+                <span>ページ名</span> 
+              </div>
+            </div>
+            <!-- /breadcrumbs -->
+
+            <h3 class="sorry">申し訳ありません<br>お探しのページはありませんでした。</h3>
             <p><a href="index.html">コチラ</a>からTopページに戻ることができます。</p>
+
+            <figure>
+              <img src="images/kbyt-2.png" alt="">
+            </figure>
+
+            <p class="serif">「ぼうけんのしょ」がきえたかもしれません…</p>
           </div>
         </section>
   

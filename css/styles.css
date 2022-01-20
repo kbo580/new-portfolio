@@ -112,13 +112,13 @@ section {
 }
 
 /* 偶数番目のセクションの見出し */
-section:nth-of-type(even) .section-heading {
+.section-heading-white {
   color: #fff;
   border-top: solid 5px #fff;
   border-bottom: solid 5px #fff;
 }
 
-section:nth-of-type(even) .section-heading::before, section:nth-of-type(even) .section-heading:after {
+.section-heading-white::before, .section-heading-white:after {
   background-color: #fff;
 }
 
@@ -180,9 +180,10 @@ section:nth-of-type(even) .section-heading::before, section:nth-of-type(even) .s
   opacity: .8;
 }
 
+/* h3の見出しの案内板 */
 .wood {
   display: inline-block;
-  margin-bottom: 10px;
+  margin-bottom: 40px;
   background-color: #BD8E6E;
   border-radius: 4px 0 0 4px;
   padding: 0.5em 0.5em 0.5em 1em;
@@ -191,9 +192,12 @@ section:nth-of-type(even) .section-heading::before, section:nth-of-type(even) .s
           box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
-.wood::after {
-  content: "";
+.wood::after, .wood::before {
   position: absolute;
+  content: "";
+}
+
+.wood::after {
   top: 0;
   left: 100%;
   border-style: solid;
@@ -202,6 +206,18 @@ section:nth-of-type(even) .section-heading::before, section:nth-of-type(even) .s
   border-width: 1.25em;
   width: 0;
   height: 0;
+}
+
+.wood::before {
+  width: 20px;
+  height: 20px;
+  background-color: #BD8E6E;
+  bottom: -20px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
 .title-label {
@@ -617,6 +633,7 @@ footer .copy {
 /*---- レイアウトここまで ----*/
 .works {
   text-align: center;
+  background-color: #fff;
 }
 
 /* h3のタイトル */
@@ -643,7 +660,7 @@ footer .copy {
 /* itemの画像 */
 .item-image {
   width: 100%;
-  padding-top: 56.4%;
+  padding-top: 56.25%;
   position: relative;
   overflow: hidden;
 }
@@ -891,20 +908,84 @@ footer .copy {
 /* profile */
 /* ------------------------------------ */
 /* 背景画像 */
-.profile .name {
-  font-size: 20px;
-  margin-bottom: 20px;
+.profile {
+  background-color: #dadada;
+  background-attachment: fixed;
 }
 
-.profile .prof-text {
+.profile .wood {
+  width: 170px;
+  display: block;
+  text-align: center;
+  margin: 0 auto 40px;
+}
+
+/* 自己紹介 */
+.prof-wrapper {
   margin-bottom: 60px;
+  position: relative;
 }
 
-.profile .btn {
-  margin-bottom: 60px;
+/* 名前 */
+.prof-name {
+  font-size: 1.125rem;
+  margin-bottom: 8px;
 }
 
-.profile .blog-pr {
+/* 自己紹介の本文 */
+.prof-text-list li:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+/* 経歴のリスト */
+.career-list li {
+  position: relative;
+  padding: 0 0 0 1.8em;
+  /* 線 */
+  /* 最後の線 */
+}
+
+.career-list li::before {
+  content: " ";
+  width: 2px;
+  background: #333;
+  display: block;
+  position: absolute;
+  top: 25px;
+  left: 0.7em;
+  bottom: 2px;
+}
+
+.career-list li:last-child::before {
+  height: 60%;
+}
+
+/* 時間 */
+time {
+  display: block;
+  color: #303030;
+  /* マーカー */
+}
+
+time::before {
+  content: "";
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 50%;
+  background: #c41a30;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* 経歴の本文 */
+.career-content {
+  padding: 1em 0;
+}
+
+/* ブログ関連 */
+.blog-pr {
   text-align: center;
   width: 250px;
   margin: 0 auto 24px;
@@ -912,7 +993,7 @@ footer .copy {
   font-size: 16px;
 }
 
-.profile .blog-pr:before, .profile .blog-pr:after {
+.blog-pr:before, .blog-pr:after {
   content: '';
   position: absolute;
   top: 60%;
@@ -922,30 +1003,31 @@ footer .copy {
   background-color: #333;
 }
 
-.profile .blog-pr:before {
+.blog-pr:before {
   left: -8%;
   -webkit-transform: rotate(60deg);
           transform: rotate(60deg);
 }
 
-.profile .blog-pr:after {
+.blog-pr:after {
   right: -8%;
   -webkit-transform: rotate(-60deg);
           transform: rotate(-60deg);
 }
 
-.profile .blog-pr span {
+/* アンダーライン */
+.under-line {
   background: -webkit-gradient(linear, left top, left bottom, color-stop(60%, transparent), color-stop(60%, #fff799));
   background: linear-gradient(transparent 60%, #fff799 60%);
 }
 
-.profile .blog-banner {
+.blog-banner {
   width: 100%;
   max-width: 430px;
   margin: 0 auto;
 }
 
-.profile .blog-banner img {
+.blog-banner img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -953,34 +1035,32 @@ footer .copy {
 }
 
 @media (min-width: 900px) {
-  .profile .name {
-    font-size: 24px;
-    margin-bottom: 32px;
-  }
-  .profile .prof-text {
+  /* 自己紹介 */
+  .prof-wrapper {
     margin-bottom: 80px;
   }
-  .profile .blog-pr {
+  /* 名前 */
+  .prof-name {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+  }
+  /* 自己紹介の本文 */
+  .prof-text-list li:not(:last-child) {
+    margin-bottom: 16px;
+  }
+  /* ブログ関連 */
+  .blog-pr {
     font-size: 20px;
     width: 300px;
   }
-  .profile .blog-pr:before, .profile .blog-pr:after {
+  .blog-pr:before, .blog-pr:after {
     width: 40px;
     height: 3px;
-  }
-  .profile .blog-banner {
-    width: 100%;
-  }
-  .profile .blog-banner img {
-    width: 100%;
-    height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
   }
 }
 
 /* -------------------------------------------- */
-/* コンタクトページ */
+/* コンタクト */
 /* -------------------------------------------- */
 /*---- レイアウトここから ----*/
 .form-wrapper {
@@ -1115,21 +1195,19 @@ span.wpcf7-not-valid-tip::before {
 /* ------------------------------------ */
 /* 下層ページ共通部品 */
 /* ------------------------------------ */
+.page__bgc {
+  background-color: #f7f6f6;
+}
+
 /* ページタイトル */
 .page-heading {
-  background-color: #bac8c6;
-  font-size: calc(2rem + ((1vw - 3.75px) * 2.2069));
-  padding: 1em 0;
-  color: #fff;
-  color: #fafafa;
-  text-align: center;
+  font-size: calc(1.5rem + ((1vw - 3.75px) * 2.9091));
 }
 
 /* パンクズリスト */
 .breadcrumbs {
-  background-color: #fafafa;
   color: #808080;
-  padding: 0.5em 1em;
+  padding: 0.5em 0;
 }
 
 .breadcrumbs .breadcrumb_inner {
@@ -1173,22 +1251,13 @@ span.wpcf7-not-valid-tip::before {
   .page-heading {
     font-size: 3rem;
   }
-  .breadcrumbs {
-    padding: 0.5em 2em;
-  }
 }
 
 /* -------------------------------------------- */
 /* singleページ */
 /* -------------------------------------------- */
-/* タイトル */
-.single .page-heading {
-  font-size: calc(1.5rem + ((1vw - 3.75px) * 1.6552));
-  padding: 1.35em 1em;
-}
-
 /* サムネイル画像 */
-.single .image-wrapper {
+.image-wrapper {
   border: 2px solid #ddd;
   width: 100%;
   margin-bottom: 16px;
@@ -1197,7 +1266,7 @@ span.wpcf7-not-valid-tip::before {
   overflow: hidden;
 }
 
-.single .image-wrapper .single-image {
+.image-wrapper .single-image {
   position: absolute;
   top: 0;
   width: 100%;
@@ -1207,26 +1276,34 @@ span.wpcf7-not-valid-tip::before {
 }
 
 /* 説明 */
-.single {
-  /* 製作のポイント */
-}
-
-.single ul {
+.single-explain-wrapper {
   margin-bottom: 16px;
 }
 
-.single ul:last-child {
+.single-explain-wrapper:last-child {
   margin-bottom: 0;
 }
 
-.single ul .single-title {
+/* 説明のタイトル */
+.single-title {
   font-weight: bold;
   margin-bottom: 8px;
   font-size: calc(1rem + ((1vw - 3.75px) * 0.4848));
 }
 
-.single ul .single-content {
+/* 説明文 */
+.single-content {
   color: #808080;
+}
+
+/* 製作のポイント */
+.point-wrapper .single-content {
+  padding-left: 1.2em;
+  text-indent: -1.2em;
+}
+
+.point-wrapper .single-content:not(:last-child) {
+  margin-bottom: 8px;
 }
 
 .single ul a {
@@ -1240,40 +1317,31 @@ span.wpcf7-not-valid-tip::before {
   opacity: .6;
 }
 
-.single .point-wrapper .single-content {
-  padding-left: 1.2em;
-  text-indent: -1.2em;
-}
-
-.single .point-wrapper .single-content:not(:last-child) {
-  margin-bottom: 8px;
-}
-
 /* イメージ画像の大枠 */
-.single .site-image-wrapper {
+.site-image-wrapper {
   margin-bottom: 64px;
-  /* pcでのイメージ */
-  /* spでのイメージ */
-  /* ボタン */
 }
 
-.single .site-image-wrapper .pc-image-wrapper {
+/* pcでのイメージ */
+.pc-image-wrapper {
   margin-bottom: 24px;
 }
 
-.single .site-image-wrapper .pc-image-wrapper .pc-image {
+.pc-image-wrapper .pc-image {
   display: none;
 }
 
-.single .site-image-wrapper .sp-image-wrapper {
+/* spでのイメージ */
+.sp-image-wrapper {
   margin-bottom: 24px;
 }
 
-.single .site-image-wrapper .sp-image-wrapper .sp-image {
+.sp-image-wrapper .sp-image {
   display: none;
 }
 
-.single .site-image-wrapper .toggle-btn {
+/* トグルボタン */
+.toggle-btn {
   cursor: pointer;
   color: #333;
   background-color: #fff;
@@ -1285,11 +1353,12 @@ span.wpcf7-not-valid-tip::before {
   margin-bottom: 8px;
 }
 
-.single .site-image-wrapper .toggle-btn i {
+.toggle-btn i {
   margin-right: 5px;
 }
 
-.single .site-image-wrapper .click-open {
+/* 注釈 */
+.click-open {
   font-size: 12px;
   margin-bottom: 16px;
   color: #808080;
@@ -1354,40 +1423,38 @@ span.wpcf7-not-valid-tip::before {
     margin-bottom: 24px;
   }
   /* サムネイル画像 */
-  .single .image-wrapper {
+  .image-wrapper {
     margin-bottom: 32px;
   }
   /* 説明 */
-  .single ul {
+  .single-explain-wrapper {
     margin-bottom: 32px;
   }
   /* イメージ画像の大枠 */
-  .single {
-    /* ボタン */
-  }
-  .single .site-image-wrapper {
+  .site-image-wrapper {
     margin-bottom: 64px;
-    /* pcでのイメージ */
-    /* pcでのイメージ */
   }
-  .single .site-image-wrapper .pc-image-wrapper {
+  /* pcでのイメージ */
+  .pc-image-wrapper {
     margin-bottom: 40px;
   }
-  .single .site-image-wrapper .pc-image-wrapper .pc-image {
+  .pc-image-wrapper .pc-image {
     display: block;
   }
-  .single .site-image-wrapper .sp-image-wrapper {
+  /* pcでのイメージ */
+  .sp-image-wrapper {
     margin-bottom: 40px;
     width: 50%;
   }
-  .single .site-image-wrapper .sp-image-wrapper .sp-image {
+  .sp-image-wrapper .sp-image {
     display: block;
   }
-  .single .toggle-btn {
+  /* トグルボタン */
+  .toggle-btn {
     -webkit-transition: all .4s;
     transition: all .4s;
   }
-  .single .toggle-btn:hover {
+  .toggle-btn:hover {
     background: #bac8c6;
     color: #fff;
   }
@@ -1395,11 +1462,11 @@ span.wpcf7-not-valid-tip::before {
 
 @media (min-width: 1025px) {
   /* 説明 */
-  .single ul .single-title {
+  .single-title {
     font-size: 1.25rem;
   }
   /* イメージ画像の大枠 */
-  .single .site-image-wrapper {
+  .site-image-wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1407,26 +1474,27 @@ span.wpcf7-not-valid-tip::before {
         -ms-flex-pack: justify;
             justify-content: space-between;
     margin-bottom: 128px;
-    /* pcでのイメージ */
-    /* スマホでのイメージ */
   }
-  .single .site-image-wrapper .pc-image-wrapper {
+  /* pcでのイメージ */
+  .pc-image-wrapper {
     margin-bottom: 0px;
     width: 70%;
   }
-  .single .site-image-wrapper .pc-image-wrapper .pc-image {
+  .pc-image-wrapper .pc-image {
     display: block;
   }
-  .single .site-image-wrapper .sp-image-wrapper {
+  /* スマホでのイメージ */
+  .sp-image-wrapper {
     margin-bottom: 0px;
     width: 28%;
   }
-  .single .site-image-wrapper .sp-image-wrapper .sp-image {
+  .sp-image-wrapper .sp-image {
     display: block;
     width: 100%;
   }
-  .single .site-image-wrapper .click-open {
-    font-size: 14px;
+  /* 注釈 */
+  .click-open {
+    font-size: 0.875rem;
     margin-bottom: 24px;
   }
 }
@@ -1434,10 +1502,6 @@ span.wpcf7-not-valid-tip::before {
 /* -------------------------------------------- */
 /* 製作物の一覧ページ(works) */
 /* -------------------------------------------- */
-.works .works-add {
-  margin-bottom: 20px;
-}
-
 /* ページネーション */
 .pagination .nav-links {
   display: -webkit-box;
@@ -1473,116 +1537,20 @@ span.wpcf7-not-valid-tip::before {
 }
 
 @media (min-width: 575px) {
-  .works .works-add {
-    text-align: center;
-    margin-bottom: 40px;
-  }
   .works .pagination {
     margin-bottom: 80px;
   }
 }
 
 /* -------------------------------------------- */
-/* プロフィールページ */
-/* -------------------------------------------- */
-/* 自分について */
-.about .about-me-wrapper {
-  margin-bottom: 60px;
-  /* 自己紹介 */
-}
-
-.about .about-me-wrapper .name {
-  margin-bottom: 8px;
-  font-size: calc(1rem + ((1vw - 3.75px) * 1.1034));
-}
-
-.about .about-me-wrapper .about-text-list li:not(:last-child) {
-  margin-bottom: 8px;
-}
-
-/* 経歴 */
-.about .career-wrapper {
-  /* 経歴のリスト */
-}
-
-.about .career-wrapper .career-list li {
-  position: relative;
-  padding: 0 0 0 1.8em;
-  /* 線 */
-  /* 最後の線 */
-  /* 時間 */
-  /* 経歴の本文 */
-}
-
-.about .career-wrapper .career-list li::before {
-  content: " ";
-  width: 2px;
-  background: #333;
-  display: block;
-  position: absolute;
-  top: 25px;
-  left: 0.7em;
-  bottom: 2px;
-}
-
-.about .career-wrapper .career-list li:last-child::before {
-  height: 60%;
-}
-
-.about .career-wrapper .career-list li time {
-  display: block;
-  color: #808080;
-  /* マーカー */
-}
-
-.about .career-wrapper .career-list li time::before {
-  content: "";
-  width: 1.5em;
-  height: 1.5em;
-  border-radius: 50%;
-  background: #c41a30;
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.about .career-wrapper .career-list li .career-content {
-  padding: 1.5em 0;
-}
-
-@media (min-width: 575px) {
-  /* サブタイトル */
-  .about .h3-title {
-    margin-bottom: 32px;
-  }
-  .about {
-    /* 自分について */
-  }
-  .about .about-me-wrapper {
-    margin-bottom: 80px;
-    /* 自己紹介 */
-  }
-  .about .about-me-wrapper .name {
-    margin-bottom: 12px;
-  }
-  .about .about-me-wrapper .about-text-list li:not(:last-child) {
-    margin-bottom: 16px;
-  }
-}
-
-@media (min-width: 1025px) {
-  .about .about-me-wrapper .name {
-    font-size: 1.5rem;
-  }
-}
-
-/* -------------------------------------------- */
 /* 404ページ */
 /* -------------------------------------------- */
-.not-found-page h2 {
-  font-size: calc(1.375rem + ((1vw - 3.75px) * 2.5366));
-  margin-bottom: 32px;
+.not-found-page {
+  background-color: #ddd;
+}
+
+.not-found-page p {
+  margin-bottom: 20px;
 }
 
 .not-found-page p a {
@@ -1596,14 +1564,36 @@ span.wpcf7-not-valid-tip::before {
   opacity: .7;
 }
 
+.not-found-page figure {
+  width: 50%;
+  text-align: center;
+  margin: 0 auto 10px;
+}
+
+/* 謝罪 */
+.sorry {
+  font-size: calc(1.375rem + ((1vw - 3.75px) * 2.5366));
+  margin-bottom: 32px;
+}
+
+/* セリフ */
+.serif {
+  border: 5px solid #fff;
+  border-radius: 8px;
+  padding: 1.5em 1em;
+  background-color: #000;
+  color: #fff;
+  font-family: 'DotGothic16', sans-serif;
+}
+
 @media (min-width: 575px) {
-  .not-found-page h2 {
+  .sorry {
     margin-bottom: 80px;
   }
 }
 
 @media (min-width: 1025px) {
-  .not-found-page h2 {
+  .not-found-page .sorry {
     font-size: 3rem;
   }
 }

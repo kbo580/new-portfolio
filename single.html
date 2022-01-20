@@ -17,85 +17,121 @@
   <div class="pc-wrapper"><!--サイドバー用-->
     <header>
       <div class="inner">
-        <h1><a href="index.html">Yuta Kobayashi's<br>Portfolio</a></h1>
+        
+        <h1 class="site-title"><a href="#">Yuta Kobayashi's<br>Portfolio</a></h1>
 
-        <nav class="header-nav">
-          <ul>
-            <li><a href="#works">Works</a></li>
-            <li><a href="#service">Service</a></li>
-            <li><a href="#profile">Profile</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="404.html">Blog</a></li>
+        <div class="sp-nav-wrapper">
+          <div class="open-icon icon" id="open">メニュー</div>
+          <!-- /open-icon-->
+
+          <div class="fixed-icon-wrapper">
+            <div class="open-icon icon" id="open">メニュー</div>
+          </div>
+          <!-- /fixed-icon-wrapper -->
+
+          <nav id="sp-nav" class="sp-nav">
+            <div class="close-icon icon" id="close">閉じる</div>
+
+            <div class="sp-nav-list">
+              <span class="nav-title title-label">メニュー</span>
+              <ul class="nav-list">
+                <li><a href="index.html">Top</a></li>
+                <li><a href="#works">Works</a></li>
+                <li><a href="#skill">Skills</a></li>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="">Blog</a></li>
+              </ul>  
+            </div>
+            <!-- /sp-nav-list -->
+          </nav>
+          <!-- /sp-nav -->
+
+        </div>
+        <!-- /sp-nav-wrapper -->
+
+        <nav class="pc-nav">
+          <span class="nav-title title-label">メニュー</span>
+          <ul class="nav-list">
+            <li><span class="cursor"><i class="fas fa-caret-right"></i></span><a href="index.html">Top</a></li>
+            <li><span class="cursor"><i class="fas fa-caret-right"></i></span><a href="#works">Works</a></li>
+            <li><span class="cursor"><i class="fas fa-caret-right"></i></span><a href="#skill">Skills</a></li>
+            <li><span class="cursor"><i class="fas fa-caret-right"></i></span><a href="#profile">Profile</a></li>
+            <li><span class="cursor"><i class="fas fa-caret-right"></i></span><a href="#contact">Contact</a></li>
+            <li><span class="cursor"><i class="fas fa-caret-right"></i></span><a href="404.html">Blog</a></li>
+            <!-- <li><span class="cursor">a</span><a href="test.html">裏</a></li> -->
           </ul>
         </nav>
-        <!-- /header-nav -->
+        <!-- /pc-nav -->
+        
       </div>
-
-
+      <!-- /inner -->
     </header>
 
     <div class="contents-wrapper">
 
       <main>
-        <div class="page-mv single">
+        <!-- <div class="page-mv single">
           <h2 class="page-heading">ページタイトルページタイトル</h2>  
-        </div>
+        </div> -->
         <!-- /page-mv -->
-
-        <div class="breadcrumbs">
-          <div class="breadcrumb_inner">
-            <span><a href="/">HOME</a></span> >
-            <span><a href="/">ページ名</a></span> >
-            <span>ページタイトルページタイトル</span> 
-          </div>
-        </div>
-        <!-- /breadcrumbs -->
         
-        <section class="single">
+        <section class="single page__bgc">
           <div class="inner">
+
+            <h2 class="section-heading page-heading">ページタイトルページタイトル</h2>
+
+            <div class="breadcrumbs">
+              <div class="breadcrumb_inner">
+                <span><a href="/"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>HOME</a></span> >
+                <span><a href="/">ページ名</a></span> >
+                <span>ページタイトルページタイトル</span> 
+              </div>
+            </div>
+            <!-- /breadcrumbs -->
           
             <div class="image-wrapper">
               <!-- <img src="<?php echo CFS()->get('screen');?>" class="single-image"> -->
               <img src="images/k-create-pc-image.png" alt="" class="single-image">
             </div>
     
-            <ul>
+            <ul class="single-explain-wrapper">
               <li class="single-title">サイト名</li>
               <!-- <li class="single-content"><a href="#"><?php echo CFS()->get('url');?></a><i class="fas fa-external-link-alt"></i></li> -->
               <li class="list-content"><a href="#">サイトタイトル</a></li>
             </ul>
   
-            <ul>
+            <ul class="single-explain-wrapper">
               <li class="single-title">サイト構成</li>
               <!-- <li class="single-content"><?php echo CFS()->get('structure');?></li> -->
               <li class="single-content">ページ構成</li>
             </ul>
     
-            <ul>
+            <ul class="single-explain-wrapper">
               <li class="single-title">作成ツールなど</li>
               <!-- <li class="single-content"><?php echo CFS()->get('tools');?></li> -->
-              <li class="list-content">html/ css/ jQuery</li>
+              <li class="single-content">html/ css/ jQuery</li>
             </ul>
   
-            <ul>
+            <ul class="single-explain-wrapper">
               <li class="single-title">制作期間</li>
               <!-- <li class="single-content"><?php echo CFS()->get('period');?></li> -->
               <li class="single-content">日数</li>
             </ul>
   
-            <ul>
+            <ul class="single-explain-wrapper">
               <li class="single-title">サイト製作の概要</li>
               <!-- <li class="single-content"><?php echo CFS()->get('about-works');?></li> -->
               <li class="single-content">テキストが入ります。テキストが入ります。。</li>
             </ul>
   
-            <ul>
+            <ul class="single-explain-wrapper">
               <li class="single-title">ゴール</li>
               <!-- <li class="single-content"><?php echo CFS()->get('goal');?></li> -->
               <li class="single-content">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</li>
             </ul>
   
-            <ul class="point-wrapper">
+            <ul class="single-explain-wrapper point-wrapper">
               <li class="single-title">サイト製作のポイントなど</li>
                 <!-- <?php
                   $fields = $cfs->get('point-list'); 
@@ -108,7 +144,7 @@
                 <li class="single-content">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</li>
             </ul>
           
-            <ul class="works-comments">
+            <ul class="single-explain-wrapper works-comments">
               <li class="single-title">注釈、一言</li>
               <li class="single-content">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</li>
               <!-- <li class="single-content"><?php echo CFS()->get('word');?></li> -->
@@ -116,7 +152,6 @@
   
             <div class="site-image-wrapper">
     
-              <!-- パソコン用イメージここから -->
               <div class="pc-image-wrapper">
                 <div class="toggle-btn" id="pcToggle"><i class="fas fa-desktop"></i>パソコンでのイメージ</div>
                 <p class="click-open">※クリックで開閉できます</p>
@@ -125,18 +160,18 @@
                   <img src="images/k-create-screen .png" alt="">
                 </div>
               </div>
-              <!-- パソコン用イメージここまで -->
+              <!-- /pc-image-wrapper -->
     
-              <!-- スマホ用イメージここから -->
               <div class="sp-image-wrapper">
                 <div class="toggle-btn" id="spToggle"><i class="fas fa-mobile-alt"></i>スマホでのイメージ</div>
                 <p class="click-open">※クリックで開閉できます</p>
+
                 <div class="sp-image">
                   <!-- <img src="<?php echo CFS()->get('sp-image');?>" alt="<?php the_title(); ?>のスマホイメージ画像" loading="lazy"> -->
                   <img src="images/k-create_sp-screen .png" alt="">
                 </div>
               </div>
-              <!-- スマホ用イメージここまで -->
+              <!-- /sp-image-wrapper -->
   
             </div>
             <!-- /site-image-wrapper -->

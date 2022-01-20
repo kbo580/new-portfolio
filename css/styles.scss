@@ -135,7 +135,7 @@ section{
 }
 
 /* 偶数番目のセクションの見出し */
-section:nth-of-type(even) .section-heading{
+.section-heading-white{
   color: #fff;
   border-top: solid 5px #fff;
   border-bottom: solid 5px #fff;
@@ -202,19 +202,23 @@ section:nth-of-type(even) .section-heading{
   }
 }
 
-
+/* h3の見出しの案内板 */
 .wood{
   display: inline-block;
-  margin-bottom: 10px;
+  margin-bottom: 40px;
   background-color: #BD8E6E;
   border-radius: 4px 0 0 4px;
   padding: 0.5em 0.5em 0.5em 1em;
   position: relative;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
 
-  &::after{
-    content: "";
+  &::after,
+  &::before{
     position: absolute;
+    content: "";
+  }
+
+  &::after{
     top: 0;
     left: 100%;
     border-style: solid;
@@ -223,6 +227,16 @@ section:nth-of-type(even) .section-heading{
     border-width: 1.25em;
     width: 0;
     height: 0;
+  }
+
+  &::before{
+    width: 20px;
+    height: 20px;
+    background-color: #BD8E6E;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -561,7 +575,6 @@ footer{
   border-radius: 8px;
   font-size: 18px;
   font-size: calc(1.125rem + ((1vw - 3.45px) * 1.1696));
-
   letter-spacing: 0.2em;
   text-align: center;
   max-width: 100%;
@@ -615,6 +628,8 @@ footer{
 
 .works{
   text-align: center;
+
+  background-color: #fff;
 }
 
 /* h3のタイトル */
@@ -664,7 +679,7 @@ footer{
 /* itemの画像 */
 .item-image{
   width: 100%;
-  padding-top: 56.4%;
+  padding-top: 56.25%;
   position: relative;
   overflow: hidden;
 
@@ -903,9 +918,7 @@ footer{
 
 @media (min-width: 1025px){
   /*---- レイアウトここから ----*/
-  .skill{
-    // height: 1000px;
-  }
+
   /*---- レイアウトここまで ----*/
 }
 
@@ -913,106 +926,170 @@ footer{
 /* profile */
 /* ------------------------------------ */
 /* 背景画像 */
-// .profile{
-//   background: url(../images/18sa.jpg) center / cover no-repeat;
-//   background-attachment: fixed;
-// }
-
 .profile{
-  .name{
-    font-size: 20px;
-    margin-bottom: 20px;
+  // background: url(../images/18sa.jpg) center / cover no-repeat;
+  background-color: #dadada;
+  background-attachment: fixed;
+
+  .wood{
+    width: 170px;
+    display: block; 
+    text-align: center;
+    margin: 0 auto 40px;
   }
-  
-  .prof-text{
-    margin-bottom: 60px;
+}
+
+/* 自己紹介 */
+.prof-wrapper{
+  margin-bottom: 60px;
+  // background-color: rgba(255, 255, 255, 0.4);
+  position: relative;
+}
+
+/* 名前 */
+.prof-name{
+  font-size: rem(18);
+  margin-bottom: 8px;
+}
+
+/* 自己紹介の本文 */
+.prof-text-list{
+  li:not(:last-child){
+    margin-bottom: 8px;
+  }
+}
+
+/* 経歴のリスト */
+.career-list{
+
+  li{
+    position: relative;
+    padding: 0 0 0 1.8em;
+
+    /* 線 */
+    &::before{
+      content: " ";
+      width: 2px;
+      background: $textColorA;
+      display: block;
+      position: absolute;
+      top: 25px;
+      left: 0.7em;
+      bottom: 2px;
+    }
+
+    /* 最後の線 */
+    &:last-child::before{
+      height: 60%;
+    }
+  }
+}
+
+/* 時間 */
+time{
+  display: block;
+  color: rgb(48, 48, 48);
+
+  /* マーカー */
+  &::before{
+    content: "";
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    background: $accentColor;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+}
+
+/* 経歴の本文 */
+.career-content{
+  padding: 1em 0;
+}
+
+/* ブログ関連 */
+.blog-pr{
+  text-align: center;
+  width: 250px;
+  margin: 0 auto 24px;
+  position: relative;
+  font-size: 16px;
+
+  &:before, 
+  &:after {
+    content: '';
+    position: absolute;
+    top: 60%;
+    display: inline-block;
+    width: 32px;
+    height: 3px;
+    background-color: $textColorA;
   }
 
-  .btn{
-    margin-bottom: 60px;
+  &:before {
+    left: -8%;
+    transform: rotate(60deg);
   }
-  
+
+  &:after {
+    right: -8%;
+    transform: rotate(-60deg);
+  }
+}
+
+/* アンダーライン */
+.under-line{
+  background:linear-gradient(transparent 60%, #fff799 60%);
+}
+
+.blog-banner{
+  width: 100%;
+  max-width: 430px;
+  margin: 0 auto;
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+
+@media (min-width: 900px){
+  /* 自己紹介 */
+  .prof-wrapper{
+    margin-bottom: 80px;
+  }
+
+  /* 名前 */
+  .prof-name{
+    font-size: rem(24);
+    margin-bottom: 16px;
+  }
+
+  /* 自己紹介の本文 */
+  .prof-text-list{
+    li:not(:last-child){
+      margin-bottom: 16px;
+    }
+  }
+    
+  /* ブログ関連 */
   .blog-pr{
-    text-align: center;
-    width: 250px;
-    margin: 0 auto 24px;
-    position: relative;
-    font-size: 16px;
+    font-size: 20px;
+    width: 300px;
 
     &:before, 
     &:after {
-      content: '';
-      position: absolute;
-      top: 60%;
-      display: inline-block;
-      width: 32px;
+      width: 40px;
       height: 3px;
-      background-color: $textColorA;
-    }
-
-    &:before {
-      left: -8%;
-      transform: rotate(60deg);
-    }
-
-    &:after {
-      right: -8%;
-      transform: rotate(-60deg);
-    }
-
-    span{
-      background:linear-gradient(transparent 60%, #fff799 60%);
     }
   }
-
-  .blog-banner{
-    width: 100%;
-    max-width: 430px;
-    margin: 0 auto;
-    img{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-}
-
-@media (min-width: 900px){
-  .profile{
-
-    .name{
-      font-size: 24px;
-      margin-bottom: 32px;
-    }
-    
-    .prof-text{
-      margin-bottom: 80px;
-    }
-    
-    .blog-pr{
-      font-size: 20px;
-      width: 300px;
-
-      &:before, 
-      &:after {
-        width: 40px;
-        height: 3px;
-      }
-    }
-  
-    .blog-banner{
-      width: 100%;
-      img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
-  } 
 }
 
 /* -------------------------------------------- */
-/* コンタクトページ */
+/* コンタクト */
 /* -------------------------------------------- */
 /*---- レイアウトここから ----*/
 .form-wrapper{
@@ -1159,21 +1236,19 @@ span.wpcf7-not-valid-tip {
 /* ------------------------------------ */
 /* 下層ページ共通部品 */
 /* ------------------------------------ */
+.page__bgc{
+  background-color: #f7f6f6;
+}
+
 /* ページタイトル */
 .page-heading{
-  background-color: $subColor;
-  font-size: calc(2rem + ((1vw - 3.75px) * 2.2069));
-  padding: 1em 0;
-  color: #fff;
-  color: $backgroundColor;
-  text-align: center;
+  font-size: calc(1.5rem + ((1vw - 3.75px) * 2.9091));
 }
 
 /* パンクズリスト */
 .breadcrumbs{
-  background-color: $backgroundColor;
   color: $textColorC;
-  padding: 0.5em 1em;
+  padding: 0.5em 0;
 
   .breadcrumb_inner {
     display: flex;
@@ -1205,62 +1280,65 @@ span.wpcf7-not-valid-tip {
   .page-heading{
     font-size: rem(48);
   }
-
-  .breadcrumbs{
-    padding: 0.5em 2em;
-  }
 }
 
 /* -------------------------------------------- */
 /* singleページ */
 /* -------------------------------------------- */
-/* タイトル */
-.single{
-  .page-heading{
-    font-size: calc(1.5rem + ((1vw - 3.75px) * 1.6552));
-    padding: 1.35em 1em;
-  }
-}
-
 /* サムネイル画像 */
-.single{
-  .image-wrapper{
-    border: 2px solid #ddd;
-    width:100%;
-    margin-bottom: 16px;
-    padding-top: 56.25%;
-    position: relative;
-    overflow: hidden;
+.image-wrapper{
+  border: 2px solid #ddd;
+  width:100%;
+  margin-bottom: 16px;
+  padding-top: 56.25%;
+  position: relative;
+  overflow: hidden;
 
-    .single-image{
-      position: absolute;
-      top:0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+  .single-image{
+    position: absolute;
+    top:0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }
 
 /* 説明 */
+.single-explain-wrapper{
+  margin-bottom: 16px;
+
+  &:last-child{
+    margin-bottom: 0;
+  }
+}
+
+/* 説明のタイトル */
+.single-title{
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: calc(1rem + ((1vw - 3.75px) * 0.4848));
+}
+
+/* 説明文 */
+.single-content{
+  color: $textColorC;
+}
+
+/* 製作のポイント */
+.point-wrapper{
+
+  .single-content{
+    padding-left: 1.2em;
+    text-indent: -1.2em;
+  }
+
+  .single-content:not(:last-child){
+    margin-bottom: 8px;
+  }
+}
+
 .single{
   ul{
-    margin-bottom: 16px;
-
-    &:last-child{
-      margin-bottom: 0;
-    }
-
-    .single-title{
-      font-weight: bold;
-      margin-bottom: 8px;
-      font-size: calc(1rem + ((1vw - 3.75px) * 0.4848));
-    }
-
-    .single-content{
-      color: $textColorC;
-    }
-
     a{
       color: #1B0DAB;
       display: inline-block;
@@ -1271,67 +1349,53 @@ span.wpcf7-not-valid-tip {
       }
     }
   }
-
-  /* 製作のポイント */
-  .point-wrapper{
-
-    .single-content{
-      padding-left: 1.2em;
-      text-indent: -1.2em;
-    }
-
-    .single-content:not(:last-child){
-      margin-bottom: 8px;
-    }
-  }
 }
 
 /* イメージ画像の大枠 */
-.single{
-  .site-image-wrapper{
-    margin-bottom: 64px;
+.site-image-wrapper{
+  margin-bottom: 64px;
+}
 
-    /* pcでのイメージ */
-    .pc-image-wrapper{
-      margin-bottom: 24px;
-      .pc-image{
-        display: none;
-      }
-    }
-
-    /* spでのイメージ */
-    .sp-image-wrapper{
-      margin-bottom: 24px;
-      .sp-image{
-        display: none;
-      }
-    }
-
-    /* ボタン */
-    .toggle-btn{
-      cursor: pointer;
-      color: $textColorA;
-      background-color: #fff;
-      border: 2px solid darken($subColor, 15%);
-      padding: 8px;
-      display: inline-block;
-      border-radius: 6px;
-      font-weight: bold;
-      margin-bottom: 8px;
-
-      i{
-        margin-right: 5px;
-      }
-    }
-
-    .click-open{
-      font-size: 12px;
-      margin-bottom: 16px;
-      color:$textColorC;
-    }
+/* pcでのイメージ */
+.pc-image-wrapper{
+  margin-bottom: 24px;
+  .pc-image{
+    display: none;
   }
 }
 
+/* spでのイメージ */
+.sp-image-wrapper{
+  margin-bottom: 24px;
+  .sp-image{
+    display: none;
+  }
+}
+
+/* トグルボタン */
+.toggle-btn{
+  cursor: pointer;
+  color: $textColorA;
+  background-color: #fff;
+  border: 2px solid darken($subColor, 15%);
+  padding: 8px;
+  display: inline-block;
+  border-radius: 6px;
+  font-weight: bold;
+  margin-bottom: 8px;
+
+  i{
+    margin-right: 5px;
+  }
+}
+
+/* 注釈 */
+.click-open{
+  font-size: 12px;
+  margin-bottom: 16px;
+  color:$textColorC;
+}
+  
 /* 記事ページ用 */
 .post-navigation .nav-links{
   display: flex;
@@ -1383,120 +1447,100 @@ span.wpcf7-not-valid-tip {
   }
 
   /* サムネイル画像 */
-  .single{
-    .image-wrapper{
-      margin-bottom: 32px;
-    }
+  .image-wrapper{
+    margin-bottom: 32px;
   }
 
   /* 説明 */
-  .single{
-    ul{
-      margin-bottom: 32px;
-    }
+  .single-explain-wrapper{
+    margin-bottom: 32px;
   }
 
   /* イメージ画像の大枠 */
-  .single{
-    .site-image-wrapper{
-      margin-bottom: 64px;
+  .site-image-wrapper{
+    margin-bottom: 64px;
+  }
 
-      /* pcでのイメージ */
-      .pc-image-wrapper{
-        margin-bottom: 40px;
-        .pc-image{
-          display: block;
-        }
-      }
-
-      /* pcでのイメージ */
-      .sp-image-wrapper{
-        margin-bottom: 40px;
-        width: 50%;
-        .sp-image{
-          display: block;
-        }
-      }
-    }
-
-    /* ボタン */
-    .toggle-btn{
-      transition: all .4s;
-
-      &:hover{
-        background: $subColor;
-        color: #fff;
-      }
+  /* pcでのイメージ */
+  .pc-image-wrapper{
+    margin-bottom: 40px;
+    .pc-image{
+      display: block;
     }
   }
+
+  /* pcでのイメージ */
+  .sp-image-wrapper{
+    margin-bottom: 40px;
+    width: 50%;
+    .sp-image{
+      display: block;
+    }
+  }
+
+  /* トグルボタン */
+  .toggle-btn{
+    transition: all .4s;
+  
+    &:hover{
+      background: $subColor;
+      color: #fff;
+    }
+  }
+
 }
 
 @media (min-width: 1025px) {
-  .works{
-    .works-heading{
-      // font-size: rem(36);
-    }
-  }
-
-  /* 説明 */  
-  .single{
-    ul{
-      .single-title{
-        font-size: rem(20);
-      }
-    }
+  /* 説明 */ 
+  .single-title{
+    font-size: rem(20);
   }
 
   /* イメージ画像の大枠 */
-  .single{
-    .site-image-wrapper{
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 128px;
+  .site-image-wrapper{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 128px;
+  }
 
-      /* pcでのイメージ */
-      .pc-image-wrapper{
-        margin-bottom: 0px;
-        width: 70%;
+  /* pcでのイメージ */
+  .pc-image-wrapper{
+    margin-bottom: 0px;
+    width: 70%;
 
-        .pc-image{
-          display: block;
-        }
-      }
-
-      /* スマホでのイメージ */
-      .sp-image-wrapper{
-        margin-bottom: 0px;
-        width: 28%;
-      
-        .sp-image{
-          display: block;
-          width: 100%;
-        }
-      }
-
-      .click-open{
-        font-size: 14px;
-        margin-bottom: 24px;
-      }
+    .pc-image{
+      display: block;
     }
   }
+
+  /* スマホでのイメージ */
+  .sp-image-wrapper{
+    margin-bottom: 0px;
+    width: 28%;
+  
+    .sp-image{
+      display: block;
+      width: 100%;
+    }
+  }
+
+  /* 注釈 */
+  .click-open{
+    font-size: rem(14);
+    margin-bottom: 24px;
+  }
+  
 }
 
 /* -------------------------------------------- */
 /* 製作物の一覧ページ(works) */
 /* -------------------------------------------- */
-.works{
-  .works-add{
-    margin-bottom: 20px;
-  }
-}
-
 /* ページネーション */
 .pagination .nav-links{
   display: flex;
   justify-content: center;
   gap: 8px;
+
   /* 数字のリンク */
   .page-numbers{
     color: $textColorA;
@@ -1522,129 +1566,8 @@ span.wpcf7-not-valid-tip {
 
 @media (min-width: 575px){
   .works{
-    .works-add{
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
     .pagination{
       margin-bottom: 80px;
-    }
-  }
-}
-
-/* -------------------------------------------- */
-/* プロフィールページ */
-/* -------------------------------------------- */
-/* 自分について */
-.about{
-  .about-me-wrapper{
-    margin-bottom: 60px;
-
-    .name{
-      margin-bottom: 8px;
-      font-size: calc(1rem + ((1vw - 3.75px) * 1.1034));
-    }
-  
-    /* 自己紹介 */
-    .about-text-list{
-      li:not(:last-child){
-        margin-bottom: 8px;
-      }
-    }
-  }
-}
-
-/* 経歴 */
-.about{
-  .career-wrapper{
-  
-    /* 経歴のリスト */
-    .career-list{
-  
-      li{
-        position: relative;
-        padding: 0 0 0 1.8em;
-  
-        /* 線 */
-        &::before{
-          content: " ";
-          width: 2px;
-          background: $textColorA;
-          display: block;
-          position: absolute;
-          top: 25px;
-          left: 0.7em;
-          bottom: 2px;
-        }
-  
-        /* 最後の線 */
-        &:last-child::before{
-          height: 60%;
-        }
-  
-        /* 時間 */
-        time{
-          display: block;
-          color: $textColorC;
-
-          /* マーカー */
-          &::before{
-            content: "";
-            width: 1.5em;
-            height: 1.5em;
-            border-radius: 50%;
-            background: $accentColor;
-            display: block;
-            position: absolute;
-            top: 0;
-            left: 0;
-          }
-        }
-  
-        /* 経歴の本文 */
-        .career-content{
-          padding: 1.5em 0;
-        }
-      }
-    }
-  }
-}
-
-@media (min-width: 575px) {
-  /* サブタイトル */
-  .about{
-    .h3-title{
-      margin-bottom: 32px;
-    }
-  }
-
-  .about{
-    /* 自分について */
-    .about-me-wrapper{
-      margin-bottom: 80px;
-
-      .name{
-        margin-bottom: 12px;
-      }
-
-       /* 自己紹介 */
-      .about-text-list{
-        li:not(:last-child){
-          margin-bottom: 16px;
-        }
-      }
-    }
-  }
-}
-
-@media (min-width: 1025px){
-
-  .about{
-    .about-me-wrapper{
-      .name{
-        font-size: rem(24);
-      }
     }
   }
 }
@@ -1653,12 +1576,10 @@ span.wpcf7-not-valid-tip {
 /* 404ページ */
 /* -------------------------------------------- */
 .not-found-page{
-  h2{
-    font-size: calc(1.375rem + ((1vw - 3.75px) * 2.5366));
-    margin-bottom: 32px;
-  }
+  background-color: #ddd;
 
   p{
+    margin-bottom: 20px;
     a{
       color: #1B0DAB;;
       transition: all .4s;
@@ -1668,19 +1589,38 @@ span.wpcf7-not-valid-tip {
       }
     }
   }
+
+  figure{
+    width: 50%;
+    text-align: center;
+    margin: 0 auto 10px;
+  }
+}
+
+/* 謝罪 */
+.sorry{
+  font-size: calc(1.375rem + ((1vw - 3.75px) * 2.5366));
+  margin-bottom: 32px;
+}
+
+/* セリフ */
+.serif{
+  @include border;
+  padding: 1.5em 1em;
+  background-color: #000;
+  color: #fff;
+  font-family: 'DotGothic16', sans-serif;
 }
 
 @media (min-width: 575px) {
-  .not-found-page{
-    h2{
-      margin-bottom: 80px;
-    }
+  .sorry{
+    margin-bottom: 80px;
   }
 }
 
 @media (min-width: 1025px) {
   .not-found-page{
-    h2{
+    .sorry{
       font-size: rem(48);
     }
   }

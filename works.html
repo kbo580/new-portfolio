@@ -17,98 +17,130 @@
   <div class="pc-wrapper"><!--サイドバー用-->
     <header>
       <div class="inner">
-        <h1><a href="index.html">Yuta Kobayashi's<br>Portfolio</a></h1>
         
-        <nav class="header-nav">
-          <ul>
-            <li><a href="#works">Works</a></li>
-            <li><a href="#service">Service</a></li>
-            <li><a href="#profile">Profile</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="404.html">Blog</a></li>
+        <h1 class="site-title"><a href="#">Yuta Kobayashi's<br>Portfolio</a></h1>
+
+        <div class="sp-nav-wrapper">
+          <div class="open-icon icon" id="open">メニュー</div>
+          <!-- /open-icon-->
+
+          <div class="fixed-icon-wrapper">
+            <div class="open-icon icon" id="open">メニュー</div>
+          </div>
+          <!-- /fixed-icon-wrapper -->
+
+          <nav id="sp-nav" class="sp-nav">
+            <div class="close-icon icon" id="close">閉じる</div>
+
+            <div class="sp-nav-list">
+              <span class="nav-title title-label">メニュー</span>
+              <ul class="nav-list">
+                <li><a href="index.html">Top</a></li>
+                <li><a href="#works">Works</a></li>
+                <li><a href="#skill">Skills</a></li>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="">Blog</a></li>
+              </ul>  
+            </div>
+            <!-- /sp-nav-list -->
+          </nav>
+          <!-- /sp-nav -->
+
+        </div>
+        <!-- /sp-nav-wrapper -->
+
+        <nav class="pc-nav">
+          <span class="nav-title title-label">メニュー</span>
+          <ul class="nav-list">
+            <li><span class="cursor"><i class="fas fa-caret-right"></i></span><a href="index.html">Top</a></li>
+            <li><span class="cursor"><i class="fas fa-caret-right"></i></span><a href="#works">Works</a></li>
+            <li><span class="cursor"><i class="fas fa-caret-right"></i></span><a href="#skill">Skills</a></li>
+            <li><span class="cursor"><i class="fas fa-caret-right"></i></span><a href="#profile">Profile</a></li>
+            <li><span class="cursor"><i class="fas fa-caret-right"></i></span><a href="#contact">Contact</a></li>
+            <li><span class="cursor"><i class="fas fa-caret-right"></i></span><a href="404.html">Blog</a></li>
+            <!-- <li><span class="cursor">a</span><a href="test.html">裏</a></li> -->
           </ul>
         </nav>
-        <!-- /header-nav -->
+        <!-- /pc-nav -->
+        
       </div>
+      <!-- /inner -->
     </header>
 
     <div class="contents-wrapper">
 
       <main>
-        <div class="page-mv">
-          <h2 class="page-heading">Works</h2>  
-        </div>
-        <!-- /page-mv -->
 
-
-        <div class="breadcrumbs">
-          <div class="breadcrumb_inner">
-            <span><a href="/">ページ名</a></span> >
-            <span><a href="/">ページ名</a></span> >
-            <span>ページ名</span> 
-          </div>
-        </div>
-        <!-- /breadcrumbs -->
-
-        <section class="works" id="works">
+        <section class="works page__bgc" id="works">
           
           <div class="inner">
 
-            <div class="works-wrapper">
-              <p class="works-add">Webデザインとコーディング制作の記録です。</p>
-              <ul class="items-wrapper">
+            <div class="works-wrapper__works">
+
+              <h2 class="section-heading page-heading">Works</h2>
+              <div class="breadcrumbs">
+                <div class="breadcrumb_inner">
+                  <span><a href="/">ページ名</a></span> >
+                  <span><a href="/">ページ名</a></span> >
+                  <span>ページ名</span> 
+                </div>
+              </div>
+              <!-- /breadcrumbs -->
+
+              <ul class="items">
   
-                <li class="item-card">
-                  <a href="">
-                    <div class="work-image">
+                <li class="item">
+                  <a href="" class="item-wrapper">
+                    <figure class="item-image">
                       <img src="images/works-img.jpg" alt="">
-                    </div>
-                    <p class="work-title">ttl</p>
+                    </figure>
+                    <p class="item-title">ttl</p>
                   </a>
                 </li>
   
-                <li class="item-card">
-                  <a href="">
-                    <div class="work-image">
-                      <img src="images/no-image.png" alt="">
-                    </div>
-                    <p class="work-title">ttl</p>
-                  </a>
-                </li>
-  
-                <li class="item-card">
-                  <a href="">
-                    <div class="work-image">
+                <li class="item">
+                  <a href="" class="item-wrapper">
+                    <figure class="item-image">
                       <img src="images/works-img.jpg" alt="">
-                    </div>
-                    <p class="work-title">ttl</p>
+                    </figure>
+                    <p class="item-title">ttl</p>
                   </a>
                 </li>
   
-                <li class="item-card">
-                  <a href="">
-                    <div class="work-image">
-                      <img src="images/no-image.png" alt="">
-                    </div>
-                    <p class="work-title">ttl</p>
-                  </a>
-                </li>
-  
-                <li class="item-card">
-                  <a href="">
-                    <div class="work-image">
-                      <img src="images/no-image.png" alt="">
-                    </div>
-                    <p class="work-title">ttl</p>
-                  </a>
-                </li>
-  
-                <li class="item-card">
-                  <a href="">
-                    <div class="work-image">
+                <li class="item">
+                  <a href="" class="item-wrapper">
+                    <figure class="item-image">
                       <img src="images/works-img.jpg" alt="">
-                    </div>
-                    <p class="work-title">ttl</p>
+                    </figure>
+                    <p class="item-title">ttl</p>
+                  </a>
+                </li>
+  
+                <li class="item">
+                  <a href="" class="item-wrapper">
+                    <figure class="item-image">
+                      <img src="images/works-img.jpg" alt="">
+                    </figure>
+                    <p class="item-title">ttl</p>
+                  </a>
+                </li>
+  
+                <li class="item">
+                  <a href="" class="item-wrapper">
+                    <figure class="item-image">
+                      <img src="images/works-img.jpg" alt="">
+                    </figure>
+                    <p class="item-title">ttl</p>
+                  </a>
+                </li>
+  
+                <li class="item">
+                  <a href="" class="item-wrapper">
+                    <figure class="item-image">
+                      <img src="images/works-img.jpg" alt="">
+                    </figure>
+                    <p class="item-title">ttl</p>
                   </a>
                 </li>
   
