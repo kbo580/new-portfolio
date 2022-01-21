@@ -134,7 +134,6 @@ $(function(){
   });
 
   var fixedHeaderHight = $('.fixed-icon-wrapper').outerHeight(true);
-  console.log(fixedHeaderHight)
   $(window).on('scroll', function(){
     var section = $('.mv').offset().top;
     if($(this).scrollTop()>= section-fixedHeaderHight){ 
