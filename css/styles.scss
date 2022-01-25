@@ -34,16 +34,8 @@ img{
 }
 
 /* 色の設定 */
-$textColorA: #333;
-// $textColorB: #FFFDFE;
-$textColorC: #808080;
-
-$backgroundColor: #fafafa;
-$backgroundColorB: #F4F5F7;
-
-$mainColor:#494544;
-$mainColorB: darken(#494544, 5%);
-$subColor: #bac8c6;
+$textColor: #333;
+$textColorB: #808080;
 $accentColor: #c41a30;
 
 /* 枠 */
@@ -67,16 +59,15 @@ $accentColor: #c41a30;
 /* ------------------------------------ */
 /* 共通部分 */
 /* ------------------------------------ */
-/* 共通設定 */
 body {
-  font-family:  "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-size: calc(0.875rem + ((1vw - 3.75px) * 0.2424));
   line-height: 1.5;
   letter-spacing: 0.15em;
-  color: $textColorA;
+  color: $textColor;
   background-color: #000;
   z-index: 1;
   position: relative;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 .inner{
@@ -90,7 +81,6 @@ body {
 section{
   padding: 70px 0 100px;
   position:  relative;
-  // background-color: #000;
 }
 
 .pc-wrapper{
@@ -562,7 +552,6 @@ footer{
 .mv{
   background-color: #000;
   width: 100%;
-  // height: 500px;
   height: 100vh;
 
   .inner{
@@ -636,33 +625,7 @@ footer{
 
 .works{
   text-align: center;
-
   background-color: #fff;
-}
-
-/* h3のタイトル */
-.works{
-  .h3-title{
-    // display: inline-block;
-    // margin-bottom: 10px;
-    // background-color: #BD8E6E;
-    // border-radius: 4px 0 0 4px;
-    // padding: 0.5em 0.5em 0.5em 1em;
-    // position: relative;
-    // box-shadow: 0 4px 10px rgba(0, 0, 0, 0.16);
-    // &::after{
-    //   content: "";
-    //   position: absolute;
-    //   top: 0;
-    //   left: 100%;
-    //   border-style: solid;
-    //   border-color: transparent;
-    //   border-left-color: #BD8E6E;
-    //   border-width: 1.25em;
-    //   width: 0;
-    //   height: 0;
-    // }
-  }
 }
 
 /* 注釈 */
@@ -762,7 +725,6 @@ footer{
 
 .skill-wrapper{
   margin-bottom: 90px;
-  // border: 1px solid #fff;
 }
 
 .skill-item{
@@ -787,7 +749,6 @@ footer{
 .skill_set{
   margin-bottom: 30px;
   width: 100%;
-  // border: 1px solid #fc2;
 
   &:last-child{
     margin-bottom: 0;
@@ -850,11 +811,6 @@ footer{
   height: 40px;
   display: inline-block;
   margin-right: 8px;
-}
-
-/* スキルの説明 */
-.skill_set-explain{
-  // color: $textColorC;
 }
 
 @media (min-width: 575px){
@@ -937,7 +893,7 @@ footer{
 .profile{
   // background: url(../images/18sa.jpg) center / cover no-repeat;
   background-color: #dadada;
-  background-attachment: fixed;
+  // background-attachment: fixed;
 
   .wood{
     width: 200px;
@@ -977,7 +933,7 @@ footer{
     &::before{
       content: " ";
       width: 2px;
-      background: $textColorA;
+      background: #000;
       display: block;
       position: absolute;
       top: 25px;
@@ -995,7 +951,7 @@ footer{
 /* 時間 */
 time{
   display: block;
-  color: rgb(48, 48, 48);
+  // color: $textColor;
 
   /* マーカー */
   &::before{
@@ -1032,7 +988,7 @@ time{
     display: inline-block;
     width: 32px;
     height: 3px;
-    background-color: $textColorA;
+    background-color: $textColor;
   }
 
   &:before {
@@ -1127,6 +1083,7 @@ time{
 
   .title-label{
     font-size: rem(14);
+    z-index: 2;
   }
 
   input[type="text"],
@@ -1140,12 +1097,16 @@ time{
     color: inherit;
     border-radius: 3px;
     font-size: 14px;
+
+    &:focus{
+      outline:#000;
+      background-color: #000;
+    }
   }
 
   textarea{
     height: 200px;
   }
-
 }
 
 .acceptance{
@@ -1170,6 +1131,8 @@ time{
   font-size: rem(16);
   border-radius: 4px;
   border: 4px solid #fff;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
 
   &:hover{
     opacity: .6;
@@ -1181,7 +1144,7 @@ time{
 span.wpcf7-not-valid-tip {
   padding-top: 0.5em;
   font-weight: 600;
-  display: block;
+  // display: block;
 
   &::before{
     content: "※";
@@ -1193,6 +1156,9 @@ span.wpcf7-not-valid-tip {
   font-weight: bold;
   margin: 0;
 }
+
+
+
 
 @media (min-width: 575px) {
   /*---- レイアウトここから ----*/
@@ -1217,26 +1183,24 @@ span.wpcf7-not-valid-tip {
   }
 
   /* フォーム部品 */
-  .form-wrapper{
-    .form-parts{
-      .title-label{
-        font-size: rem(16);
-      }
-
-      input[type="text"],
-      input[type="email"],
-      textarea{
-        font-size: 16px;
-      }
-
-      input[type="submit"] {
-        font-size: 16px;
-      }
-
-      &.acceptance{
-        margin-bottom: 80px;
-      }
+  .form-parts{
+    .title-label{
+      font-size: rem(16);
     }
+
+    input[type="text"],
+    input[type="email"],
+    textarea{
+      font-size: 16px;
+    }
+
+    input[type="submit"] {
+      font-size: 16px;
+    }
+  }
+  
+  .acceptance{
+    margin-bottom: 80px;
   }
 }
 
@@ -1254,7 +1218,7 @@ span.wpcf7-not-valid-tip {
 
 /* パンクズリスト */
 .breadcrumbs{
-  color: $textColorC;
+  color: $textColorB;
   padding: 0.5em 0;
 
   .breadcrumb_inner {
@@ -1328,7 +1292,7 @@ span.wpcf7-not-valid-tip {
 
 /* 説明文 */
 .single-content{
-  color: $textColorC;
+  color: $textColorB;
 }
 
 /* 製作のポイント */
@@ -1382,7 +1346,7 @@ span.wpcf7-not-valid-tip {
 /* トグルボタン */
 .toggle-btn{
   cursor: pointer;
-  color: $textColorA;
+  color: $textColor;
   background-color: #fff;
   border: 2px solid #000;
   padding: 8px;
@@ -1400,7 +1364,7 @@ span.wpcf7-not-valid-tip {
 .click-open{
   font-size: 12px;
   margin-bottom: 16px;
-  color:$textColorC;
+  color:$textColorB;
 }
   
 /* 記事ページ用 */
@@ -1414,15 +1378,15 @@ span.wpcf7-not-valid-tip {
   .nav-next{
     position: absolute;
     a{
-      color: $textColorA;
-      border: 2px solid darken($subColor, 15%);
+      color: $textColor;
+      border: 2px solid #000;
       background-color: #fff;
       display: inline-block;
       border-radius: 4px;
       padding: 0.5em 0.8em;
       transition: .3s;
       &:hover{
-        background: $subColor;
+        background: #000;
         color: #fff;
       }
     }
@@ -1550,9 +1514,9 @@ span.wpcf7-not-valid-tip {
 
   /* 数字のリンク */
   .page-numbers{
-    color: $textColorA;
+    color: $textColor;
     background-color: #fff;
-    border: 2px solid darken($subColor, 15%);
+    border: 2px solid #000;
     display: inline-block;
     border-radius: 4px;
     padding: 0.5em 0.8em;
@@ -1560,13 +1524,13 @@ span.wpcf7-not-valid-tip {
 
     /* 現在のページ */
     &.current{
-      background-color: $subColor;
+      background-color: #000;
       color: #fff;
     }
   }
 
   a:hover{
-    background: $subColor;
+    background: #000;
     color: #fff;
   }
 }
@@ -1637,21 +1601,6 @@ span.wpcf7-not-valid-tip {
   .serif{
     font-size: rem(30);
   }
-}
-
-
-/* ------------------------------------ */
-/* 下層ページ */
-/* ------------------------------------ */
-
-@media (min-width: 575px) {
-
-  
-}
-
-@media (min-width: 1025px) {
-
-  
 }
 
 

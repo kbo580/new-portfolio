@@ -45,9 +45,7 @@ img {
 /* ------------------------------------ */
 /* 共通部分 */
 /* ------------------------------------ */
-/* 共通設定 */
 body {
-  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
   font-size: calc(0.875rem + ((1vw - 3.75px) * 0.2424));
   line-height: 1.5;
   letter-spacing: 0.15em;
@@ -55,6 +53,7 @@ body {
   background-color: #000;
   z-index: 1;
   position: relative;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 .inner {
@@ -643,7 +642,6 @@ footer .copy {
   background-color: #fff;
 }
 
-/* h3のタイトル */
 /* 注釈 */
 .works-sentence {
   margin-bottom: 20px;
@@ -835,7 +833,6 @@ footer .copy {
   margin-right: 8px;
 }
 
-/* スキルの説明 */
 @media (min-width: 575px) {
   /*---- レイアウトここから ----*/
   /* セクションの見出し */
@@ -917,7 +914,6 @@ footer .copy {
 /* 背景画像 */
 .profile {
   background-color: #dadada;
-  background-attachment: fixed;
 }
 
 .profile .wood {
@@ -954,7 +950,7 @@ footer .copy {
 .career-list li::before {
   content: " ";
   width: 2px;
-  background: #333;
+  background: #000;
   display: block;
   position: absolute;
   top: 25px;
@@ -969,7 +965,6 @@ footer .copy {
 /* 時間 */
 time {
   display: block;
-  color: #303030;
   /* マーカー */
 }
 
@@ -1099,6 +1094,7 @@ time::before {
 
 .form-parts .title-label {
   font-size: 0.875rem;
+  z-index: 2;
 }
 
 .form-parts input[type="text"],
@@ -1112,6 +1108,13 @@ time::before {
   color: inherit;
   border-radius: 3px;
   font-size: 14px;
+}
+
+.form-parts input[type="text"]:focus,
+.form-parts input[type="email"]:focus,
+.form-parts textarea:focus {
+  outline: #000;
+  background-color: #000;
 }
 
 .form-parts textarea {
@@ -1141,6 +1144,8 @@ time::before {
   font-size: 1rem;
   border-radius: 4px;
   border: 4px solid #fff;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
 }
 
 .rpg-btn_submit:hover {
@@ -1152,7 +1157,6 @@ time::before {
 span.wpcf7-not-valid-tip {
   padding-top: 0.5em;
   font-weight: 600;
-  display: block;
 }
 
 span.wpcf7-not-valid-tip::before {
@@ -1182,18 +1186,18 @@ span.wpcf7-not-valid-tip::before {
     margin-bottom: 40px;
   }
   /* フォーム部品 */
-  .form-wrapper .form-parts .title-label {
+  .form-parts .title-label {
     font-size: 1rem;
   }
-  .form-wrapper .form-parts input[type="text"],
-  .form-wrapper .form-parts input[type="email"],
-  .form-wrapper .form-parts textarea {
+  .form-parts input[type="text"],
+  .form-parts input[type="email"],
+  .form-parts textarea {
     font-size: 16px;
   }
-  .form-wrapper .form-parts input[type="submit"] {
+  .form-parts input[type="submit"] {
     font-size: 16px;
   }
-  .form-wrapper .form-parts.acceptance {
+  .acceptance {
     margin-bottom: 80px;
   }
 }
@@ -1390,7 +1394,7 @@ span.wpcf7-not-valid-tip::before {
 .post-navigation .nav-links .nav-previous a,
 .post-navigation .nav-links .nav-next a {
   color: #333;
-  border: 2px solid #8fa6a3;
+  border: 2px solid #000;
   background-color: #fff;
   display: inline-block;
   border-radius: 4px;
@@ -1401,7 +1405,7 @@ span.wpcf7-not-valid-tip::before {
 
 .post-navigation .nav-links .nav-previous a:hover,
 .post-navigation .nav-links .nav-next a:hover {
-  background: #bac8c6;
+  background: #000;
   color: #fff;
 }
 
@@ -1523,7 +1527,7 @@ span.wpcf7-not-valid-tip::before {
 .pagination .nav-links .page-numbers {
   color: #333;
   background-color: #fff;
-  border: 2px solid #8fa6a3;
+  border: 2px solid #000;
   display: inline-block;
   border-radius: 4px;
   padding: 0.5em 0.8em;
@@ -1533,12 +1537,12 @@ span.wpcf7-not-valid-tip::before {
 }
 
 .pagination .nav-links .page-numbers.current {
-  background-color: #bac8c6;
+  background-color: #000;
   color: #fff;
 }
 
 .pagination .nav-links a:hover {
-  background: #bac8c6;
+  background: #000;
   color: #fff;
 }
 
@@ -1608,8 +1612,4 @@ span.wpcf7-not-valid-tip::before {
     font-size: 1.875rem;
   }
 }
-
-/* ------------------------------------ */
-/* 下層ページ */
-/* ------------------------------------ */
 /*# sourceMappingURL=styles.css.map */
