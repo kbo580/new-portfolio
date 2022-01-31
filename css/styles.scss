@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 *{
   box-sizing: border-box;
 }
@@ -20,7 +21,7 @@ body,h1,h2,h3,h4,h5,p,ul,li,ol,dl,dt,dd,figure,input,textarea {
 input[type="text"],
 input[type="submit"],
 input[type="button"]{
--webkit-appearance: none;
+  -webkit-appearance: none;
 }
 
 a { 
@@ -74,7 +75,6 @@ body {
   margin: 0 auto;
   max-width: 1200px;
   width: 100%;
-  // background-color: rgba(241,92,168,0.2);
   padding: 0 4%;
 }
 
@@ -149,7 +149,7 @@ section{
 
 /* h3の見出し */
 .h3-title{
-  font-size: calc(1.25rem + ((1vw - 3.75px) * 1.2121));
+  font-size: calc(1.25rem + ((1vw - 3.75px) * 0.4848));
 }
 
 /* 固定背景 */
@@ -223,6 +223,7 @@ section{
   }
 }
 
+/* メニューのラベル */
 .title-label{
   position: absolute;
   display: inline-block;
@@ -233,10 +234,6 @@ section{
   font-size: 18px;
   background-color: #000;
   font-weight: bold;
-}
-
-.fa-external-link-alt{
-  margin-left: 4px;
 }
 
 @media (min-width: 768px){
@@ -286,7 +283,7 @@ section{
 
   /* h3の見出し */
   .h3-title{
-    font-size: rem(30);
+    font-size: rem(24);
   }
 
   /* ボタン */
@@ -417,7 +414,6 @@ header{
   height: 100vh;
   left: -150%;
   top: 0%;
-  // left: 0;
   color: #fff;
   transition: all .4s;
 }
@@ -447,6 +443,13 @@ header{
   a{
     margin: 0.5em;
     display: inline-block;
+  }
+
+  & li:last-child a::after{
+    content: "\f35d";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    margin-left: 4px;
   }
 }
 
@@ -891,9 +894,7 @@ footer{
 /* ------------------------------------ */
 /* 背景画像 */
 .profile{
-  // background: url(../images/18sa.jpg) center / cover no-repeat;
   background-color: #dadada;
-  // background-attachment: fixed;
 
   .wood{
     width: 200px;
@@ -951,7 +952,6 @@ footer{
 /* 時間 */
 time{
   display: block;
-  // color: $textColor;
 
   /* マーカー */
   &::before{
@@ -959,7 +959,7 @@ time{
     width: 1.5em;
     height: 1.5em;
     border-radius: 50%;
-    background: $accentColor;
+    background: $textColorB;
     display: block;
     position: absolute;
     top: 0;
@@ -1157,9 +1157,6 @@ span.wpcf7-not-valid-tip {
   margin: 0;
 }
 
-
-
-
 @media (min-width: 575px) {
   /*---- レイアウトここから ----*/
   .form-wrapper{
@@ -1254,7 +1251,7 @@ span.wpcf7-not-valid-tip {
 }
 
 /* -------------------------------------------- */
-/* singleページ */
+/* 記事ページ */
 /* -------------------------------------------- */
 /* サムネイル画像 */
 .image-wrapper{
@@ -1274,7 +1271,7 @@ span.wpcf7-not-valid-tip {
   }
 }
 
-/* 説明 */
+/* 説明リスト */
 .single-explain-wrapper{
   margin-bottom: 16px;
 
@@ -1295,6 +1292,24 @@ span.wpcf7-not-valid-tip {
   color: $textColorB;
 }
 
+/* サイト名のリンク */
+.cfs-hyperlink{
+  color: #1B0DAB;
+  display: inline-block;
+  transition: all .4s;
+
+  &:hover{
+    opacity: .6;
+  }
+
+  &::after{
+    content: "\f35d";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    margin-left: 4px;
+  }
+}
+
 /* 製作のポイント */
 .point-wrapper{
 
@@ -1305,20 +1320,6 @@ span.wpcf7-not-valid-tip {
 
   .single-content:not(:last-child){
     margin-bottom: 8px;
-  }
-}
-
-.single{
-  ul{
-    a{
-      color: #1B0DAB;
-      display: inline-block;
-      transition: all .4s;
-
-      &:hover{
-        opacity: .6;
-      }
-    }
   }
 }
 
@@ -1356,18 +1357,18 @@ span.wpcf7-not-valid-tip {
   margin-bottom: 8px;
 
   i{
-    margin-right: 5px;
+    margin-right: 4px;
   }
 }
 
 /* 注釈 */
 .click-open{
-  font-size: 12px;
+  font-size: rem(12);
   margin-bottom: 16px;
   color:$textColorB;
 }
   
-/* 記事ページ用 */
+/* 記事ページ用ナビゲーション */
 .post-navigation .nav-links{
   display: flex;
   justify-content: space-between;
@@ -1404,25 +1405,13 @@ span.wpcf7-not-valid-tip {
   }
 }
 
-/* 一覧へ戻るボタン */
-.return-works{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
 @media (min-width: 575px) {
-  .screen-wrapper{
-    margin-bottom: 24px;
-  }
-
   /* サムネイル画像 */
   .image-wrapper{
     margin-bottom: 32px;
   }
 
-  /* 説明 */
+  /* 説明リスト */
   .single-explain-wrapper{
     margin-bottom: 32px;
   }
@@ -1462,7 +1451,7 @@ span.wpcf7-not-valid-tip {
 }
 
 @media (min-width: 1025px) {
-  /* 説明 */ 
+  /* 説明のタイトル */ 
   .single-title{
     font-size: rem(20);
   }
@@ -1506,6 +1495,10 @@ span.wpcf7-not-valid-tip {
 /* -------------------------------------------- */
 /* 製作物の一覧ページ(works) */
 /* -------------------------------------------- */
+.works-wrapper__archives .items{
+  margin-bottom: 30px;
+}
+
 /* ページネーション */
 .pagination .nav-links{
   display: flex;
@@ -1536,6 +1529,10 @@ span.wpcf7-not-valid-tip {
 }
 
 @media (min-width: 575px){
+  .works-wrapper__archives .items{
+    margin-bottom: 80px;
+  }
+
   .works{
     .pagination{
       margin-bottom: 80px;
@@ -1546,30 +1543,31 @@ span.wpcf7-not-valid-tip {
 /* -------------------------------------------- */
 /* 404ページ */
 /* -------------------------------------------- */
-.not-found-page{
+.nf-page{
   background-color: #ddd;
+}
 
-  p{
-    margin-bottom: 20px;
-    a{
-      color: #1B0DAB;;
-      transition: all .4s;
-      text-decoration: underline;
-      &:hover{
-        opacity: .7;
-      }
+.top-link{
+  margin-bottom: 20px;
+  a{
+    color: #1B0DAB;;
+    transition: all .4s;
+    text-decoration: underline;
+    &:hover{
+      opacity: .7;
     }
-  }
-
-  figure{
-    width: 50%;
-    text-align: center;
-    margin: 0 auto 10px;
   }
 }
 
+/* 画像 */
+.kbyt-image{
+  width: 50%;
+  text-align: center;
+  margin: 0 auto 10px;
+}
+
 /* 謝罪 */
-.sorry{
+.apolo{
   font-size: calc(1.375rem + ((1vw - 3.75px) * 2.5366));
   margin-bottom: 32px;
 }
@@ -1585,16 +1583,16 @@ span.wpcf7-not-valid-tip {
 }
 
 @media (min-width: 575px) {
-  .sorry{
+  /* 謝罪 */
+  .apolo{
     margin-bottom: 80px;
   }
 }
 
 @media (min-width: 1025px) {
-  .not-found-page{
-    .sorry{
-      font-size: rem(48);
-    }
+  /* 謝罪 */
+  .apolo{
+    font-size: rem(48);
   }
 
   /* セリフ */
@@ -1602,5 +1600,3 @@ span.wpcf7-not-valid-tip {
     font-size: rem(30);
   }
 }
-
-
